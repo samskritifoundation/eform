@@ -1,0 +1,755 @@
+extends layout
+
+block content
+  h1 Ramayana Sangraha
+  p.lead Content creation form
+  hr
+  form
+    .form-group
+        label(for='sloka_num') Sloka / Gadya No. 
+        |   
+        input#sloka_num.form-control(type='text', for='sloka_num', placeholder='Alphanumeric')
+        |   
+        .form-group
+        label(for='sloka_text') Text of the sloka / Gadya 
+        |   
+        textarea#sloka_text.form-control(type='text', for='sloka_text', placeholder='Type in UNICODE Devanagari', rows='2')
+        |     
+        table.table
+          thead
+            tr
+              th(scope='col') #
+              |       
+              th(scope='col') Padavibhaga
+              |       
+              th(scope='col') Subanta / Dhatu
+              |       
+              th(scope='col') Anta
+              |       
+              th(scope='col') Linga
+              |       
+              th(scope='col') Vachana
+              |       
+              th(scope='col') Meaning
+              |       
+              th(scope='col') Lakara
+              |       
+              th(scope='col') Purusha
+              |       
+              th(scope='col') Vachana
+              |       
+              th(scope='col') Atmanepadi / Parasmaipadi
+              |       
+              th(scope='col') Set / vet / anit
+              |       
+              th(scope='col') Specific type
+              |       
+              th(scope='col') Synonyms (5)
+              |       
+              th(scope='col') Literal Meaning
+              |       
+              th(scope='col') Visheshana Visheshya Bhava
+          |       
+          tbody
+            tr
+              th(scope='row') 1
+              |       
+              td
+                .input-group
+                  input#pada1.form-control(type='text', aria-label='pada1', name='pada1')
+              |       
+              td
+                .form-check
+                  input#subanta.form-check-input(type='radio', name='subanta', value='subanta', checked='')
+                  |           
+                  label.form-check-label(for='subanta')
+                    | Subanta
+                |         
+                .form-check
+                  input#dhatu.form-check-input(type='radio', name='dhatu', value='dhatu')
+                  |           
+                  label.form-check-label(for='dhatu')
+                    | Dhatu
+              |       
+              td
+                input#anta.form-control(type='text', placeholder='Anta', name='anta')
+              |       
+              td
+                input#linga.form-control(type='text', placeholder='linga', name='linga')
+              |       
+              td
+                input#vachana.form-control(type='text', placeholder='vachana', name='vachana')
+              |       
+              td
+                input#meaning.form-control(type='text', placeholder='meaning', name='meaning')
+              |  
+              |       
+              td
+                input#lakara.form-control(type='text', placeholder='lakara', name='lakara')
+              |       
+              td
+                input#purusha.form-control(type='text', placeholder='purusha', name='purusha')
+              |       
+              td
+                input#vachana.form-control(type='text', placeholder='vachana', name='vachana')
+              |       
+              td
+                .form-check
+                  input#atmanepadi.form-check-input(type='radio', name='atmanepadi', value='atmanepadi', checked='')
+                  |           
+                  label.form-check-label(for='atmanepadi')
+                    | Atmanepadi
+                |         
+                .form-check
+                  input#parasmaipadi.form-check-input(type='radio', name='parasmaipadi', value='parasmaipadi')
+                  |           
+                  label.form-check-label(for='parasmaipadi')
+                    | Parasmaipadi
+              |       
+              td
+                select.form-control(name='setvetanit')
+                  option set
+                  |             
+                  option vet
+                  |             
+                  option anit
+              |       
+              td
+                select.form-control(name='specific_type')
+                  option kevala tinanta
+                  |             
+                  option karmani
+                  |             
+                  option Nich
+                  |           
+                  option San
+                  |           
+                  option Nichyanluk
+                  |           
+                  option yan
+                  |           
+                  option other
+              |       
+              td
+                .input-group
+                  input#synonym1.form-control(type='text', name='synonym1', aria-label='one')
+                  |   
+                  input#synonym2.form-control(type='text', name='synonym2', aria-label='two')
+                  |   
+                  input#synonym3.form-control(type='text', name='synonym3', aria-label='three')
+                  |   
+                  input#synonym4.form-control(type='text', name='synonym4', aria-label='four')
+                  |   
+                  input#synonym5.form-control(type='text', name='synonym5', aria-label='five')
+              |
+              td
+                .input-group
+                  input#meaning_sans.form-control(type='text', name='meaning_sans' placeholder="Sanskrit")
+                  br
+                  |   
+                  input#meaning_eng.form-control(type='text', name='meaning_eng' placeholder="English")
+                  br
+                  |    
+                  input#meaning_kan.form-control(type='text', name='meaning_kan' placeholder="Kannada")
+                  br
+                  |     
+                  input#meaning_hindi.form-control(type='text', name='meaning_hindi' placeholder="Hindi")
+              |
+              td 
+                input#visheshya.form-control(type='text', aria-label='v_v_bhava', name='v_v_bhava' placeholder="Visheshana-visheshya bhava")
+              tr
+              th(scope='row') 2
+              |       
+              td
+                .input-group
+                  input#pada1.form-control(type='text', aria-label='pada1', name='pada1')
+              |       
+              td
+                .form-check
+                  input#subanta.form-check-input(type='radio', name='subanta', value='subanta', checked='')
+                  |           
+                  label.form-check-label(for='subanta')
+                    | Subanta
+                |         
+                .form-check
+                  input#dhatu.form-check-input(type='radio', name='dhatu', value='dhatu')
+                  |           
+                  label.form-check-label(for='dhatu')
+                    | Dhatu
+              |       
+              td
+                input#anta.form-control(type='text', placeholder='Anta', name='anta')
+              |       
+              td
+                input#linga.form-control(type='text', placeholder='linga', name='linga')
+              |       
+              td
+                input#vachana.form-control(type='text', placeholder='vachana', name='vachana')
+              |       
+              td
+                input#meaning.form-control(type='text', placeholder='meaning', name='meaning')
+              |  
+              |       
+              td
+                input#lakara.form-control(type='text', placeholder='lakara', name='lakara')
+              |       
+              td
+                input#purusha.form-control(type='text', placeholder='purusha', name='purusha')
+              |       
+              td
+                input#vachana.form-control(type='text', placeholder='vachana', name='vachana')
+              |       
+              td
+                .form-check
+                  input#atmanepadi.form-check-input(type='radio', name='atmanepadi', value='atmanepadi', checked='')
+                  |           
+                  label.form-check-label(for='atmanepadi')
+                    | Atmanepadi
+                |         
+                .form-check
+                  input#parasmaipadi.form-check-input(type='radio', name='parasmaipadi', value='parasmaipadi')
+                  |           
+                  label.form-check-label(for='parasmaipadi')
+                    | Parasmaipadi
+              |       
+              td
+                select.form-control(name='setvetanit')
+                  option set
+                  |             
+                  option vet
+                  |             
+                  option anit
+              |       
+              td
+                select.form-control(name='specific_type')
+                  option kevala tinanta
+                  |             
+                  option karmani
+                  |             
+                  option Nich
+                  |           
+                  option San
+                  |           
+                  option Nichyanluk
+                  |           
+                  option yan
+                  |           
+                  option other
+              |       
+              td
+                .input-group
+                  input#synonym1.form-control(type='text', name='synonym1', aria-label='one')
+                  |   
+                  input#synonym2.form-control(type='text', name='synonym2', aria-label='two')
+                  |   
+                  input#synonym3.form-control(type='text', name='synonym3', aria-label='three')
+                  |   
+                  input#synonym4.form-control(type='text', name='synonym4', aria-label='four')
+                  |   
+                  input#synonym5.form-control(type='text', name='synonym5', aria-label='five')
+              tr
+              th(scope='row') 3
+              |       
+              td
+                .input-group
+                  input#pada1.form-control(type='text', aria-label='pada1', name='pada1')
+              |       
+              td
+                .form-check
+                  input#subanta.form-check-input(type='radio', name='subanta', value='subanta', checked='')
+                  |           
+                  label.form-check-label(for='subanta')
+                    | Subanta
+                |         
+                .form-check
+                  input#dhatu.form-check-input(type='radio', name='dhatu', value='dhatu')
+                  |           
+                  label.form-check-label(for='dhatu')
+                    | Dhatu
+              |       
+              td
+                input#anta.form-control(type='text', placeholder='Anta', name='anta')
+              |       
+              td
+                input#linga.form-control(type='text', placeholder='linga', name='linga')
+              |       
+              td
+                input#vachana.form-control(type='text', placeholder='vachana', name='vachana')
+              |       
+              td
+                input#meaning.form-control(type='text', placeholder='meaning', name='meaning')
+              |  
+              |       
+              td
+                input#lakara.form-control(type='text', placeholder='lakara', name='lakara')
+              |       
+              td
+                input#purusha.form-control(type='text', placeholder='purusha', name='purusha')
+              |       
+              td
+                input#vachana.form-control(type='text', placeholder='vachana', name='vachana')
+              |       
+              td
+                .form-check
+                  input#atmanepadi.form-check-input(type='radio', name='atmanepadi', value='atmanepadi', checked='')
+                  |           
+                  label.form-check-label(for='atmanepadi')
+                    | Atmanepadi
+                |         
+                .form-check
+                  input#parasmaipadi.form-check-input(type='radio', name='parasmaipadi', value='parasmaipadi')
+                  |           
+                  label.form-check-label(for='parasmaipadi')
+                    | Parasmaipadi
+              |       
+              td
+                select.form-control(name='setvetanit')
+                  option set
+                  |             
+                  option vet
+                  |             
+                  option anit
+              |       
+              td
+                select.form-control(name='specific_type')
+                  option kevala tinanta
+                  |             
+                  option karmani
+                  |             
+                  option Nich
+                  |           
+                  option San
+                  |           
+                  option Nichyanluk
+                  |           
+                  option yan
+                  |           
+                  option other
+              |       
+              td
+                .input-group
+                  input#synonym1.form-control(type='text', name='synonym1', aria-label='one')
+                  |   
+                  input#synonym2.form-control(type='text', name='synonym2', aria-label='two')
+                  |   
+                  input#synonym3.form-control(type='text', name='synonym3', aria-label='three')
+                  |   
+                  input#synonym4.form-control(type='text', name='synonym4', aria-label='four')
+                  |   
+                  input#synonym5.form-control(type='text', name='synonym5', aria-label='five')
+              tr
+              th(scope='row') 4
+              |       
+              td
+                .input-group
+                  input#pada1.form-control(type='text', aria-label='pada1', name='pada1')
+              |       
+              td
+                .form-check
+                  input#subanta.form-check-input(type='radio', name='subanta', value='subanta', checked='')
+                  |           
+                  label.form-check-label(for='subanta')
+                    | Subanta
+                |         
+                .form-check
+                  input#dhatu.form-check-input(type='radio', name='dhatu', value='dhatu')
+                  |           
+                  label.form-check-label(for='dhatu')
+                    | Dhatu
+              |       
+              td
+                input#anta.form-control(type='text', placeholder='Anta', name='anta')
+              |       
+              td
+                input#linga.form-control(type='text', placeholder='linga', name='linga')
+              |       
+              td
+                input#vachana.form-control(type='text', placeholder='vachana', name='vachana')
+              |       
+              td
+                input#meaning.form-control(type='text', placeholder='meaning', name='meaning')
+              |  
+              |       
+              td
+                input#lakara.form-control(type='text', placeholder='lakara', name='lakara')
+              |       
+              td
+                input#purusha.form-control(type='text', placeholder='purusha', name='purusha')
+              |       
+              td
+                input#vachana.form-control(type='text', placeholder='vachana', name='vachana')
+              |       
+              td
+                .form-check
+                  input#atmanepadi.form-check-input(type='radio', name='atmanepadi', value='atmanepadi', checked='')
+                  |           
+                  label.form-check-label(for='atmanepadi')
+                    | Atmanepadi
+                |         
+                .form-check
+                  input#parasmaipadi.form-check-input(type='radio', name='parasmaipadi', value='parasmaipadi')
+                  |           
+                  label.form-check-label(for='parasmaipadi')
+                    | Parasmaipadi
+              |       
+              td
+                select.form-control(name='setvetanit')
+                  option set
+                  |             
+                  option vet
+                  |             
+                  option anit
+              |       
+              td
+                select.form-control(name='specific_type')
+                  option kevala tinanta
+                  |             
+                  option karmani
+                  |             
+                  option Nich
+                  |           
+                  option San
+                  |           
+                  option Nichyanluk
+                  |           
+                  option yan
+                  |           
+                  option other
+              |       
+              td
+                .input-group
+                  input#synonym1.form-control(type='text', name='synonym1', aria-label='one')
+                  |   
+                  input#synonym2.form-control(type='text', name='synonym2', aria-label='two')
+                  |   
+                  input#synonym3.form-control(type='text', name='synonym3', aria-label='three')
+                  |   
+                  input#synonym4.form-control(type='text', name='synonym4', aria-label='four')
+                  |   
+                  input#synonym5.form-control(type='text', name='synonym5', aria-label='five')
+        .form-group
+          label(for='sandhis') Sandhis
+          |
+          table.table
+            tr
+                th(scope='col') #
+                |     
+                th(scope='col') Purvapada
+                |     
+                th(scope='col') Uttarapada
+                |     
+                th(scope='col') Name of the Sandhi
+                |     
+                th(scope='col') Other details
+                |   
+                tr
+                  th(scope='row') 1
+                  |     
+                  td
+                    input#purvapada1.form-control(type='text', placeholder='Purvapada', name='purvapada1')
+                  |     
+                  td
+                    input#uttarapada1.form-control(type='text', placeholder='Uttarapada', name='uttarapada1')
+                  |       
+                  td
+                    input#sandhi_name1.form-control(type='text', placeholder='Name of the sandhi', name='sandhi_name1')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details1')
+                  |
+                  tr
+                  th(scope='row') 2
+                  |     
+                  td
+                    input#purvapada1.form-control(type='text', placeholder='Purvapada', name='purvapada1')
+                  |     
+                  td
+                    input#uttarapada1.form-control(type='text', placeholder='Uttarapada', name='uttarapada1')
+                  |       
+                  td
+                    input#sandhi_name1.form-control(type='text', placeholder='Name of the sandhi', name='sandhi_name1')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details1')
+                  |
+                  tr
+                  th(scope='row') 3
+                  |     
+                  td
+                    input#purvapada1.form-control(type='text', placeholder='Purvapada', name='purvapada1')
+                  |     
+                  td
+                    input#uttarapada1.form-control(type='text', placeholder='Uttarapada', name='uttarapada1')
+                  |       
+                  td
+                    input#sandhi_name1.form-control(type='text', placeholder='Name of the sandhi', name='sandhi_name1')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details1')
+                  |
+                  tr
+                  th(scope='row') 4
+                  |     
+                  td
+                    input#purvapada1.form-control(type='text', placeholder='Purvapada', name='purvapada1')
+                  |     
+                  td
+                    input#uttarapada1.form-control(type='text', placeholder='Uttarapada', name='uttarapada1')
+                  |       
+                  td
+                    input#sandhi_name1.form-control(type='text', placeholder='Name of the sandhi', name='sandhi_name1')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details1')
+                  |
+                  tr
+                  th(scope='row') 5
+                  |     
+                  td
+                    input#purvapada1.form-control(type='text', placeholder='Purvapada', name='purvapada1')
+                  |     
+                  td
+                    input#uttarapada1.form-control(type='text', placeholder='Uttarapada', name='uttarapada1')
+                  |       
+                  td
+                    input#sandhi_name1.form-control(type='text', placeholder='Name of the sandhi', name='sandhi_name1')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details1')
+                  |
+                  tr
+                  th(scope='row') 6
+                  |     
+                  td
+                    input#purvapada1.form-control(type='text', placeholder='Purvapada', name='purvapada1')
+                  |     
+                  td
+                    input#uttarapada1.form-control(type='text', placeholder='Uttarapada', name='uttarapada1')
+                  |       
+                  td
+                    input#sandhi_name1.form-control(type='text', placeholder='Name of the sandhi', name='sandhi_name1')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details1')
+                  |
+                  tr
+                  th(scope='row') 7
+                  |     
+                  td
+                    input#purvapada1.form-control(type='text', placeholder='Purvapada', name='purvapada1')
+                  |     
+                  td
+                    input#uttarapada1.form-control(type='text', placeholder='Uttarapada', name='uttarapada1')
+                  |       
+                  td
+                    input#sandhi_name1.form-control(type='text', placeholder='Name of the sandhi', name='sandhi_name1')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details1')
+                  |
+                  tr
+                  th(scope='row') 8
+                  |     
+                  td
+                    input#purvapada1.form-control(type='text', placeholder='Purvapada', name='purvapada1')
+                  |     
+                  td
+                    input#uttarapada1.form-control(type='text', placeholder='Uttarapada', name='uttarapada1')
+                  |       
+                  td
+                    input#sandhi_name1.form-control(type='text', placeholder='Name of the sandhi', name='sandhi_name1')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details1')
+                  |
+                  tr
+                  th(scope='row') 9
+                  |     
+                  td
+                    input#purvapada1.form-control(type='text', placeholder='Purvapada', name='purvapada1')
+                  |     
+                  td
+                    input#uttarapada1.form-control(type='text', placeholder='Uttarapada', name='uttarapada1')
+                  |       
+                  td
+                    input#sandhi_name1.form-control(type='text', placeholder='Name of the sandhi', name='sandhi_name1')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details1')
+                  |
+                  tr
+                  th(scope='row') 10
+                  |     
+                  td
+                    input#purvapada1.form-control(type='text', placeholder='Purvapada', name='purvapada1')
+                  |     
+                  td
+                    input#uttarapada1.form-control(type='text', placeholder='Uttarapada', name='uttarapada1')
+                  |       
+                  td
+                    input#sandhi_name1.form-control(type='text', placeholder='Name of the sandhi', name='sandhi_name1')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details1')
+                  |
+        .form-group
+          label(for='samasas') Samasa
+          |
+          table.table
+            tr
+                th(scope='col') #
+                |     
+                th(scope='col') Vigraha Vakya
+                |     
+                th(scope='col') Name of the Samasa
+                |     
+                th(scope='col') Other details
+                |   
+                tr
+                  th(scope='row') 1
+                  |     
+                  td
+                    input#vigrahavakya1.form-control(type='text', placeholder='Vigraha Vakya', name='vigrahavakya1')
+                  |           
+                  td
+                    input#samasa_name1.form-control(type='text', placeholder='Name of the samasa', name='samasa_name1')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details1')
+                  |
+                  tr
+                  th(scope='row') 2
+                  |     
+                  td
+                    input#vigrahavakya2.form-control(type='text', placeholder='Vigraha Vakya', name='vigrahavakya2')
+                  |          
+                  td
+                    input#samasa_name1.form-control(type='text', placeholder='Name of the samasa', name='samasa_name2')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details2')
+                  |
+                  tr
+                  th(scope='row') 3
+                  |     
+                  td
+                    input#vigrahavakya3.form-control(type='text', placeholder='Vigraha Vakya', name='vigrahavakya3')
+                  |           
+                  td
+                    input#samasa_name1.form-control(type='text', placeholder='Name of the samasa', name='samasa_name3')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details3')
+                  |
+                  tr
+                  th(scope='row') 4
+                  |     
+                  td
+                    input#vigrahavakya4.form-control(type='text', placeholder='Vigraha Vakya', name='vigrahavakya4')
+                  |           
+                  td
+                    input#samasa_name1.form-control(type='text', placeholder='Name of the samasa', name='samasa_name4')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details4')
+                  |
+                  tr
+                  th(scope='row') 5
+                  |     
+                  td
+                    input#vigrahavakya5.form-control(type='text', placeholder='Vigraha Vakya', name='vigrahavakya5')
+                  |           
+                  td
+                    input#samasa_name1.form-control(type='text', placeholder='Name of the samasa', name='samasa_name5')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details5')
+                  |
+                  tr
+                  th(scope='row') 6
+                  |     
+                  td
+                    input#vigrahavakya6.form-control(type='text', placeholder='Vigraha Vakya', name='vigrahavakya6')
+                  |           
+                  td
+                    input#samasa_name1.form-control(type='text', placeholder='Name of the samasa', name='samasa_name6')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details6')
+                  |
+                  tr
+                  th(scope='row') 7
+                  |     
+                  td
+                    input#vigrahavakya7.form-control(type='text', placeholder='Vigraha Vakya', name='vigrahavakya7')
+                  |           
+                  td
+                    input#samasa_name1.form-control(type='text', placeholder='Name of the samasa', name='samasa_name7')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details7')
+                  |
+                  tr
+                  th(scope='row') 8
+                  |     
+                  td
+                    input#vigrahavakya8.form-control(type='text', placeholder='Vigraha Vakya', name='vigrahavakya8')
+                  |           
+                  td
+                    input#samasa_name1.form-control(type='text', placeholder='Name of the samasa', name='samasa_name8')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details8')
+                  |
+                  tr
+                  th(scope='row') 9
+                  |     
+                  td
+                    input#vigrahavakya9.form-control(type='text', placeholder='Vigraha Vakya', name='vigrahavakya9')
+                  |          
+                  td
+                    input#samasa_name1.form-control(type='text', placeholder='Name of the samasa', name='samasa_name9')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details9')
+                  |
+                  tr
+                  th(scope='row') 10
+                  |     
+                  td
+                    input#vigrahavakya1.form-control(type='text', placeholder='Vigraha Vakya', name='vigrahavakya10')
+                  |           
+                  td
+                    input#samasa_name1.form-control(type='text', placeholder='Name of the samasa', name='samasa_name10')
+                  |         
+                  td
+                    input#other_details1.form-control(type='text', placeholder='Other details', name='other_details10')
+                  |
+        .form-group
+        label(for='chandas_vritta') Chandas and Vritta 
+        |   
+        input#chandas_vritta.form-control(type='text', for='chandas_vritta', placeholder='Type in UNICODE Devanagari', rows='2')
+        | 
+        .form-group
+        label(for='alankara') Alankara
+        |   
+        input#alankara.form-control(type='text', for='alankara', placeholder='Type in UNICODE Devanagari', rows='2')
+        | 
+        .form-group
+        label(for='anvaya') Anvaya
+        |   
+        input#anvaya.form-control(type='text', for='anvaya', placeholder='Type in UNICODE Devanagari', rows='2')
+        | 
+        .form-group
+        label(for='other_info') Other information
+        |   
+        input#other_info.form-control(type='text', for='other_info', placeholder='In Devanagari / English', rows='2')
+        | 
+        .form-group
+        label(for='ref_works') Works for reference
+        |   
+        input#ref_works.form-control(type='text', for='ref_works', placeholder='In Devanagari / English', rows='2')
+        | 
+        
+        
+
