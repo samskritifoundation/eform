@@ -57,6 +57,7 @@
     "tumblr.js": "^1.1.1",
     "twilio": "^3.3.1-edge",
     "twit": "^2.2.5",
-    "validator": "^6.1.0"
+    "validator": "^6.1.0",
+    "jquery-serializejson": "^2.8.1"
   }
 }

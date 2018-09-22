@@ -3,61 +3,57 @@ const crypto = require('crypto');
 const mongoose = require('mongoose');
 
 const slokaSchema = new mongoose.Schema({
-  email: { type: String, unique: true },
-  password: String,
-  passwordResetToken: String,
-  passwordResetExpires: Date,
-
-  facebook: String,
-  twitter: String,
-  google: String,
-  github: String,
-  instagram: String,
-  linkedin: String,
-  steam: String,
-  tokens: Array,
-
-  profile: {
-    name: String,
-    gender: String,
-    location: String,
-    website: String,
-    picture: String
-  }
-}, { timestamps: true });
-
-/**
- * Password hash middleware.
- */
-slokaSchema.pre('save', function save(next) {
-  const user = this;
-  if (!user.isModified('password')) { return next(); }
-  bcrypt.genSalt(10, (err, salt) => {
-    if (err) { return next(err); }
-    bcrypt.hash(user.password, salt, null, (err, hash) => {
-      if (err) { return next(err); }
-      user.password = hash;
-      next();
-    });
-  });
+  sloka_num: { type: String, unique: true },
+  sloka_text: String,
+  padavibhaga: [
+    {
+      _id: 0,
+      pada: String,
+      subanta_or_dhatu: String,
+      anta: String,
+      linga: String,
+      s_vachana: String,
+      meaning: String,
+      lakara: String,
+      purusha: String,
+      d_vachana: String,
+      atman_or_paras: String,
+      setvetanit: String,
+      specific_type: String,
+      synonyms: Array,
+      literal_meaning: {
+        san: String,
+        eng: String,
+        kan: String,
+        hindi: String
+      },
+      visheshana_visheshya_bhava: String
+    }
+    ],
+  sandhis:[
+    {
+      _id: 0,
+      purvapada: String,
+      uttarapada: String,
+      sandhi_name: String,
+      other_details: String
+    }
+    ],
+  samasas:[
+    {
+      _id: 0,
+      vigraha_vakya: String,
+      samasa_name: String,
+      other_details: String
+    }
+    ],
+  chandas_vritta: String,
+  alankara: String,
+  anvaya: String,
+  other_info: String,
+  ref_works: String,
 });
 
-
-
-/**
- * Helper method for getting user's gravatar.
- 
-userSchema.methods.gravatar = function gravatar(size) {
-  if (!size) {
-    size = 200;
-  }
-  if (!this.email) {
-    return `https://gravatar.com/avatar/?s=${size}&d=retro`;
-  }
-  const md5 = crypto.createHash('md5').update(this.email).digest('hex');
-  return `https://gravatar.com/avatar/${md5}?s=${size}&d=retro`;
-};
-*/
 const Sloka = mongoose.model('Sloka', slokaSchema);
 
 module.exports = Sloka;
