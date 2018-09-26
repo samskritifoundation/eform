@@ -4,6 +4,7 @@
 const express = require('express');
 const compression = require('compression');
 const session = require('express-session');
+const uuidv4 = require('uuid/v4');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const chalk = require('chalk');
@@ -29,6 +30,7 @@ const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 const formController = require('./controllers/form');
+const slokaController = require('./controllers/sloka');
 
 /**
  * API keys and Passport configuration.
@@ -69,7 +71,7 @@ app.use(expressValidator());
 app.use(session({
   resave: true,
   saveUninitialized: true,
-  secret: process.env.SESSION_SECRET,
+  secret: uuidv4() ,
   store: new MongoStore({
     url: process.env.MONGODB_URI || process.env.MONGOLAB_URI,
     autoReconnect: true
@@ -129,7 +131,7 @@ app.post('/account/delete', passportConfig.isAuthenticated, userController.postD
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 app.get('/form',passportConfig.isAuthenticated, formController.getForm);
 app.post('/form',passportConfig.isAuthenticated, formController.postForm);
-app.get('/success',formController.getSuccess);
+app.get('/slokas',slokaController.getSloka);
 /**
  * API examples routes.
  */

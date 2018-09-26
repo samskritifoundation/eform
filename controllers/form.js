@@ -22,8 +22,8 @@ exports.getForm = (req, res) => {
  */
 exports.getSuccess = (req, res) => {
   if (req.sloka) {
-    return res.render('success', {
-      title: 'Form submitted'
+    return res.render('slokas', {
+      title: 'Slokas'
     });
   }
 };
@@ -32,7 +32,7 @@ exports.getSuccess = (req, res) => {
  * POST /form
  */
 exports.postForm = (req, res, next) => {
-  const errors = req.validationErrors();
+  const errors = req.getValidationResult();
 
   if (errors) {
     req.flash('errors', errors);
@@ -53,7 +53,8 @@ exports.postForm = (req, res, next) => {
       if (err) { return next(err); }
         res.redirect('/slokas');
       });
+    // db.sessions.drop()
   });  
   req.flash('success', { msg: 'Form submitted successfully!' });
-    res.redirect('/form');
+    // res.redirect('/slokas');
 };

@@ -5,13 +5,14 @@ block content
   p.lead Slokas
   hr
   .row
-    .col-sm-6
-      h2 Login
-      p Login to create content.
-      p
-        a.btn.btn-default(href='/login', role='button') Login »
-    .col-sm-6
-      h2 Register
-      p If you don't have an account yet, register. 
-      p
-        a.btn.btn-default(href='/signup', role='button') Register »
+    for sloka in slokas
+      h4
+        span= sloka.sloka_num 
+        nbsp . 
+        span= sloka.sloka_text 
+      h3 Padavibhaga 
+        ul(type=none)
+          li= sloka.padavibhaga[pada] 
+          
+          
+          
