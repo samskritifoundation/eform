@@ -7,41 +7,39 @@ const slokaSchema = new mongoose.Schema({
   sloka_text: String,
   padavibhaga: [
     {
-      _id: 0,
+      sl_num: Number,
       pada: String,
-      subanta_or_dhatu: String,
+      sub_or_dhatu: String,
       anta: String,
       linga: String,
-      s_vachana: String,
-      meaning: String,
+      sub_vachana: String,
       lakara: String,
       purusha: String,
-      d_vachana: String,
+      dhatu_vachana: String,
+      dhatu_meaning: String,
       atman_or_paras: String,
       setvetanit: String,
       specific_type: String,
       synonyms: Array,
-      literal_meaning: {
-        san: String,
-        eng: String,
-        kan: String,
-        hindi: String
-      },
       visheshana_visheshya_bhava: String
     }
     ],
-  sandhis:[
+  literal_meaning: {
+        sanskrit: String,
+        english: String,
+        kannada: String,
+        hindi: String
+      },
+  sandhi:[
     {
-      _id: 0,
       purvapada: String,
       uttarapada: String,
       sandhi_name: String,
       other_details: String
     }
     ],
-  samasas:[
+  samasa:[
     {
-      _id: 0,
       vigraha_vakya: String,
       samasa_name: String,
       other_details: String
@@ -50,8 +48,8 @@ const slokaSchema = new mongoose.Schema({
   chandas_vritta: String,
   alankara: String,
   anvaya: String,
-  other_info: String,
-  ref_works: String,
+  other_information: String,
+  works_ref: String,
 });
 
 const Sloka = mongoose.model('Sloka', slokaSchema);

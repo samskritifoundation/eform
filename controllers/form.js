@@ -40,6 +40,20 @@ exports.postForm = (req, res, next) => {
   }
 
   console.log(req.body);
+  
+ const sloka = new Sloka(req.body);
+
+  Sloka.findOne({ sloka_text: req.body.sloka_text }, (err, existingSloka) => {
+    if (err) { return next(err); }
+    if (existingSloka) {
+      req.flash('errors', { msg: 'Data for that sloka already exists' });
+      return res.redirect('/form');
+    }
+    sloka.save((err) => {
+      if (err) { return next(err); }
+        res.redirect('/slokas');
+      });
+  });  
   req.flash('success', { msg: 'Form submitted successfully!' });
     res.redirect('/form');
 };

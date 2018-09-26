@@ -8,147 +8,3186 @@ block content
       .form-group.row
           input(type='hidden', name='_csrf', value=_csrf)
           .col-sm-4
-            label(for='sloka_num') Sloka Number
+            label(for='sloka_num') 1. Sloka Number
           |     
           .col-sm-8
             input#sloka_num.form-control(type='text', name='sloka_num', placeholder='Alphanumeric input')
           |   
           .form-group
-            label(for='sloka_text') Sloka text
+            label(for='sloka_text') 2. Sloka text
             |     
             textarea#sloka_text.form-control(name='sloka_text', placeholder='Devanagari text', rows='4')
           |   
           fieldset
-            legend Padavibhaga
-            |      
-            h4  Word - 1
-            |     
-            .form-group
-              input(hidden='', name='padavibhaga[0][sl_num]', value='1')
-              |       
-              .form-group.row
-                .col-sm-4
-                  label(for='pada') Pada
-                |     
-                .col-sm-8
-                  input#pada.form-control(type='text', name='padavibhaga[0][pada]', placeholder='Devanagari')
-              |     
-              .form-group.row.form-check.form-check-inline
-                .col-sm-6
-                  input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[0][sub_or_dhatu]', value='Subanta' checked)
-                  |           
-                  label.form-check-label(for='sub_or_dhatu')
-                  | Subanta
-                  input#anta.form-control(type='text', name='padavibhaga[0][anta]', placeholder='Anta')
+            legend 3. Padavibhaga
+            |
+            p
+              |Click on any word to fill the details
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word1', aria-expanded='false', aria-controls='word1')
+              | Word 1
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word2', aria-expanded='false', aria-controls='word2')
+              | Word 2
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word3', aria-expanded='false', aria-controls='word3')
+              | Word 3
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word4', aria-expanded='false', aria-controls='word4')
+              | Word 4
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word5', aria-expanded='false', aria-controls='word5')
+              | Word 5
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word6', aria-expanded='false', aria-controls='word6')
+              | Word 6
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word7', aria-expanded='false', aria-controls='word7')
+              | Word 7
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word8', aria-expanded='false', aria-controls='word8')
+              | Word 8
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word9', aria-expanded='false', aria-controls='word9')
+              | Word 9
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word10', aria-expanded='false', aria-controls='word10')
+              | Word 10
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word11', aria-expanded='false', aria-controls='word11')
+              | Word 11
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word12', aria-expanded='false', aria-controls='word12')
+              | Word 12
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word13', aria-expanded='false', aria-controls='word13')
+              | Word 13
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word14', aria-expanded='false', aria-controls='word14')
+              | Word 14
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word15', aria-expanded='false', aria-controls='word15')
+              | Word 15
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word16', aria-expanded='false', aria-controls='word16')
+              | Word 16
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word17', aria-expanded='false', aria-controls='word17')
+              | Word 17
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word18', aria-expanded='false', aria-controls='word18')
+              | Word 18
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word19', aria-expanded='false', aria-controls='word19')
+              | Word 19
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word20', aria-expanded='false', aria-controls='word20')
+              | Word 20
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word21', aria-expanded='false', aria-controls='word21')
+              | Word 21
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word22', aria-expanded='false', aria-controls='word22')
+              | Word 22
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word23', aria-expanded='false', aria-controls='word23')
+              | Word 23
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word24', aria-expanded='false', aria-controls='word24')
+              | Word 24
+            |
+            button.mx-2.btn.btn-primary(type='button', data-toggle='collapse', data-target='#word25', aria-expanded='false', aria-controls='word25')
+              | Word 25
+            |
+            #word1.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[0][sl_num]', value='1')
+                |       
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 1
                   |
-                  input#pada.form-control(type='text', name='padavibhaga[0][linga]', placeholder='Linga')
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[0][pada]', placeholder='Devanagari')
                   |
-                  input#pada.form-control(type='text', name='padavibhaga[0][sub_vachana]', placeholder='Vachana')
-                |         
-                .form-group-row.form-check.form-check-inline
-                 .col-sm-6
-                  input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[0][sub_or_dhatu]', value='Dhatu')
-                  |           
-                  label.form-check-label(for='sub_or_dhatu')
-                  | Dhatu
-                  input#anta.form-control(type='text', name='padavibhaga[0][lakara]', placeholder='Lakara')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[0][sub_or_dhatu]', value='Subanta' checked)
+                    |
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[0][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[0][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[0][sub_vachana]', placeholder='Vachana')
                   |
-                  input#pada.form-control(type='text', name='padavibhaga[0][purusha]', placeholder='Purusha')
-                  |
-                  input#pada.form-control(type='text', name='padavibhaga[0][dhatu_vachana]', placeholder='Vachana')
-                  |   
-                  input#dhatu_meaning.form-control(type='text', name='padavibhaga[0][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                  |
-                  .form-check.form-check-inline
-                   .col-sm-6
-                    input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[0][atmane_or_parasmai]', value='Atmanepadi')
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[0][sub_or_dhatu]', value='Dhatu')
                     |           
-                    label.form-check-label(for='Atmanepadi')
-                    | Atmanepadi
-                  |
-                  .form-check.form-check-inline
-                   .col-sm-6
-                    input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[0][atmane_or_parasmai]', value='Parasmaipadi')
-                    |           
-                    label.form-check-label(for='Parasmaipadi')
-                    | Parasmaipadi
-                  |
-                  .form-check.form-check-inline
-                   .col-sm-4
-                    input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[0][set_vet_anit]', value='Set')
-                    |           
-                    label.form-check-label(for='Set')
-                    | Set
-                  |
-                  .form-check.form-check-inline
-                   .col-sm-4
-                    input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[0][set_vet_anit]', value='Vet')
-                    |           
-                    label.form-check-label(for='Vet')
-                    | Vet
-                  |
-                  .form-check.form-check-inline
-                   .col-sm-4
-                    input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[0][set_vet_anit]', value='Anit')
-                    |           
-                    label.form-check-label(for='Anit')
-                    | Anit
-                  |
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[0][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[0][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[0][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[0][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[0][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[0][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                    |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                          input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[0][set_vet_anit]', value='Set')
+                          |           
+                          label.form-check-label(for='Set')
+                          | Set
+                    |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                          input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[0][set_vet_anit]', value='Vet')
+                          |           
+                          label.form-check-label(for='Vet')
+                          | Vet
+                    |
+                    .form-check.form-check-inline
+                     .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[0][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[0][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                      |
+                  .form-group
+                    label(for='word_synonyms') Synonyms of the word (Devanagari)
+                    |     
+                    input#word_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][0]', placeholder='Synonym 1')
+                    |   
+                    input#word_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][1]', placeholder='Synonym 2')
+                    |   
+                    input#word_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][2]', placeholder='Synonym 3')
+                    |   
+                    input#slword_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][3]', placeholder='Synonym 4')
+                    |   
+                    input#word_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][4]', placeholder='Synonym 5')
+                    |
                   .form-group.row
                     .col-sm-4
-                      label(for='specific_type') Specific type
-                    |     
+                      label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |
                     .col-sm-8
-                      select.form-control(name='padavibhaga[0][specific_type]')
-                        option kevala tinanta
-                        |             
-                        option karmani
-                        |             
-                        option Nich
+                      input#v_v_bhava.form-control(type='text', name='padavibhaga[0][v_v_bhava]')
+            |
+            #word2.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[1][sl_num]', value='2')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 2
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[1][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[1][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[1][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[1][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[1][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[1][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[1][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[1][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[1][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[1][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[1][atmane_or_parasmai]', value='Atmanepadi')
                         |           
-                        option San
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[1][atmane_or_parasmai]', value='Parasmaipadi')
                         |           
-                        option Nichyanluk
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[1][set_vet_anit]', value='Set')
                         |           
-                        option yan
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[1][set_vet_anit]', value='Vet')
                         |           
-                        option other
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[1][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[1][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
                     |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[1][word_synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[1][word_synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[1][word_synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[1][word_synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[1][word_synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
-                  |    
+                    |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[0][v_v_bhava]')
-                    |
-                hr
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[1][v_v_bhava]')
+            |
+            #word3.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[2][sl_num]', value='3')
+                |      
                 .form-group.row
                   .col-sm-4
-                    label(for='literal_meaning') Literal Meaning of the verse
+                    label(for='pada') Pada 3
                   |     
                   .col-sm-8
-                    textarea#literal_meaning.form-control(name='literal_meaning[sanskrit]', placeholder='Devanagari' rows='4')
+                    input#pada.form-control(type='text', name='padavibhaga[2][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[2][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[2][anta]', placeholder='Anta')
                     |
-                    textarea#literal_meaning.form-control(type='text', name='literal_meaning[english]', placeholder='English' rows='4')
+                    input#pada.form-control(type='text', name='padavibhaga[2][linga]', placeholder='Linga')
                     |
-                    textarea#literal_meaning.form-control(type='text', name='literal_meaning[kannada]', placeholder='Kannada' rows='4')
-                    |
-                    textarea#literal_meaning.form-control(type='text', name='literal_meaning[hindi]', placeholder='Hindi' rows='4')
+                    input#pada.form-control(type='text', name='padavibhaga[2][sub_vachana]', placeholder='Vachana')
                   |
-                
-            |   
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[2][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[2][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[2][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[2][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[2][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[2][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[2][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[2][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[2][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[2][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[2][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[2][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[2][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[2][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[2][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[2][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[2][v_v_bhava]')
+            |
+            #word4.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[3][sl_num]', value='4')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 4
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[3][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[3][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[3][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[3][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[3][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[3][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[3][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[3][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[3][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[3][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[3][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[3][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[3][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[3][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[3][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[3][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[3][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[3][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[3][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[3][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[3][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[3][v_v_bhava]')
+            |
+            #word5.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[4][sl_num]', value='5')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 5
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[4][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[4][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[4][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[4][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[4][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[4][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[4][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[4][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[4][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[4][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[4][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[4][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[4][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[4][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[4][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[4][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[4][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[4][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[4][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[4][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[4][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[4][v_v_bhava]')
+            |
+            #word6.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[5][sl_num]', value='6')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 6
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[5][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[5][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[5][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[5][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[5][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[5][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[5][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[5][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[5][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[5][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[5][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[5][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[5][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[5][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[5][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[5][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[5][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[5][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[5][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[5][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[5][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[5][v_v_bhava]')
+            |
+            #word7.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[6][sl_num]', value='7')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 7
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[6][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[6][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[6][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[6][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[6][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[6][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[6][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[6][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[6][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[6][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[6][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[6][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[6][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[6][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[6][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[6][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[6][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[6][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[6][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[6][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[6][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[6][v_v_bhava]')
+            |
+            #word8.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[7][sl_num]', value='8')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 8
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[7][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[7][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[7][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[7][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[7][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[7][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[7][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[7][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[7][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[7][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[7][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[7][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[7][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[7][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[7][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[7][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[7][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[7][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[7][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[7][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[7][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[7][v_v_bhava]')
+            |
+            #word9.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[8][sl_num]', value='9')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 9
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[8][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[8][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[8][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[8][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[8][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[8][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[8][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[8][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[8][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[8][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[8][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[8][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[8][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[8][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[8][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[8][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[8][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[8][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[8][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[8][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[8][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[8][v_v_bhava]')
+            |
+            #word10.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[9][sl_num]', value='10')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 10
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[9][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[9][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[9][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[9][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[9][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[9][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[9][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[9][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[9][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[9][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[9][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[9][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[9][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[9][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[9][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[9][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[9][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[9][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[9][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[9][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[9][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[9][v_v_bhava]')
+            |
+            #word11.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[10][sl_num]', value='11')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 11
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[10][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[10][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[10][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[10][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[10][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[10][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[10][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[10][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[10][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[10][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[10][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[10][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[10][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[10][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[10][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[10][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[10][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[10][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[10][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[10][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[10][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[10][v_v_bhava]')
+            |
+            #word12.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[11][sl_num]', value='12')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 12
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[11][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[11][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[11][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[11][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[11][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[11][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[11][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[11][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[11][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[11][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[11][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[11][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[11][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[11][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[11][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[11][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[11][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[11][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[11][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[11][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[11][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[11][v_v_bhava]')
+            |
+            #word13.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[12][sl_num]', value='13')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 13
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[12][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[12][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[12][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[12][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[12][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[12][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[12][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[12][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[12][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[12][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[12][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[12][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[12][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[12][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[12][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[12][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[12][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[12][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[12][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[12][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[12][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[12][v_v_bhava]')
+            |
+            #word14.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[13][sl_num]', value='14')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 14
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[13][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[13][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[13][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[13][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[13][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[13][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[13][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[13][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[13][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[13][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[13][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[13][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[13][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[13][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[13][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[13][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[13][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[13][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[13][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[13][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[13][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[13][v_v_bhava]')
+            |
+            #word15.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[14][sl_num]', value='15')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 15
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[14][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[14][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[14][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[14][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[14][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[14][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[14][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[14][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[14][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[14][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[14][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[14][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[14][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[14][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[14][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[14][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[14][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[14][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[14][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[14][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[14][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[14][v_v_bhava]')
+            |
+            #word16.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[15][sl_num]', value='16')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 16
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[15][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[15][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[15][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[15][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[15][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[15][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[15][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[15][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[15][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[15][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[15][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[15][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[15][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[15][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[15][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[15][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[15][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[15][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[15][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[15][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[15][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[15][v_v_bhava]')
+            |
+            #word17.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[16][sl_num]', value='17')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 17
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[16][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[16][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[16][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[16][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[16][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[16][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[16][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[16][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[16][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[16][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[16][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[16][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[16][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[16][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[16][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[16][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[16][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[16][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[16][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[16][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[16][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[16][v_v_bhava]')
+            |
+            #word18.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[17][sl_num]', value='18')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 18
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[17][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[17][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[17][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[17][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[17][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[17][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[17][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[17][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[17][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[17][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[17][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[17][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[17][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[17][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[17][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[17][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[17][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[17][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[17][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[17][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[17][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[17][v_v_bhava]')
+            |
+            #word19.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[18][sl_num]', value='19')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 19
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[18][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[18][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[18][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[18][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[18][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[18][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[18][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[18][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[18][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[18][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[18][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[18][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[18][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[18][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[18][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[18][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[18][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[18][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[18][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[18][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[18][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[18][v_v_bhava]')
+            |
+            #word20.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[19][sl_num]', value='20')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 20
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[19][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[19][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[19][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[19][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[19][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[19][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[19][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[19][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[19][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[19][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[19][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[19][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[19][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[19][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[19][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[19][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[19][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[19][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[19][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[19][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[19][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[19][v_v_bhava]')
+            |
+            #word21.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[20][sl_num]', value='21')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 21
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[20][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[20][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[20][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[20][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[20][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[20][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[20][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[20][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[20][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[20][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[20][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[20][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[20][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[20][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[20][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[20][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[20][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[20][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[20][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[20][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[20][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[20][v_v_bhava]')
+            |
+            #word22.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[21][sl_num]', value='22')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 22
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[21][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[21][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[21][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[21][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[21][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[21][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[21][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[21][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[21][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[21][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[21][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[21][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[21][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[21][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[21][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[21][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[21][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[21][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[21][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[21][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[21][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[21][v_v_bhava]')
+            |
+            #word23.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[22][sl_num]', value='23')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 23
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[22][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[22][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[22][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[22][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[22][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[22][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[22][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[22][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[22][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[22][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[22][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[22][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[22][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[22][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[22][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[22][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[22][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[22][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[22][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[22][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[22][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[22][v_v_bhava]')
+            |
+            #word24.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[23][sl_num]', value='24')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 24
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[23][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[23][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[23][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[23][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[23][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[23][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[23][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[23][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[23][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[23][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[23][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[23][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[23][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[23][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[23][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[23][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[23][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[23][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[23][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[23][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[23][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[23][v_v_bhava]')
+            |
+            #word25.collapse
+              br
+              .form-group.container-fluid
+                input(hidden='', name='padavibhaga[24][sl_num]', value='25')
+                |      
+                .form-group.row
+                  .col-sm-4
+                    label(for='pada') Pada 25
+                  |     
+                  .col-sm-8
+                    input#pada.form-control(type='text', name='padavibhaga[24][pada]', placeholder='Devanagari')
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[24][sub_or_dhatu]', value='Subanta' checked)
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Subanta
+                    input#anta.form-control(type='text', name='padavibhaga[24][anta]', placeholder='Anta')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[24][linga]', placeholder='Linga')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[24][sub_vachana]', placeholder='Vachana')
+                  |
+                  .col-sm-6
+                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[24][sub_or_dhatu]', value='Dhatu')
+                    |           
+                    label.form-check-label(for='sub_or_dhatu')
+                    | Dhatu
+                    input#anta.form-control(type='text', name='padavibhaga[24][lakara]', placeholder='Lakara')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[24][purusha]', placeholder='Purusha')
+                    |
+                    input#pada.form-control(type='text', name='padavibhaga[24][dhatu_vachana]', placeholder='Vachana')
+                    |   
+                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[24][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[24][atmane_or_parasmai]', value='Atmanepadi')
+                        |           
+                        label.form-check-label(for='Atmanepadi')
+                        | Atmanepadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[24][atmane_or_parasmai]', value='Parasmaipadi')
+                        |           
+                        label.form-check-label(for='Parasmaipadi')
+                        | Parasmaipadi
+                      |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[24][set_vet_anit]', value='Set')
+                        |           
+                        label.form-check-label(for='Set')
+                        | Set
+                      |
+                    .form-check.form-check-inline
+                       .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[24][set_vet_anit]', value='Vet')
+                        |           
+                        label.form-check-label(for='Vet')
+                        | Vet
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-4
+                        input#set_vet_anit.form-check-input(type='radio', name='padavibhaga[24][set_vet_anit]', value='Anit')
+                        |           
+                        label.form-check-label(for='Anit')
+                        | Anit
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='specific_type') Specific type
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[24][specific_type]')
+                          option kevala tinanta
+                          |             
+                          option karmani
+                          |             
+                          option Nich
+                          |           
+                          option San
+                          |           
+                          option Nichyanluk
+                          |           
+                          option yan
+                          |           
+                          option other
+                    |
+                .form-group
+                  label(for='word_synonyms') Synonyms of the word (Devanagari)
+                  |     
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[24][word_synonyms][0]', placeholder='Synonym 1')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[24][word_synonyms][1]', placeholder='Synonym 2')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[24][word_synonyms][2]', placeholder='Synonym 3')
+                  |   
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[24][word_synonyms][3]', placeholder='Synonym 4')
+                  |   
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[24][word_synonyms][4]', placeholder='Synonym 5')
+                  |
+                .form-group.row
+                  .col-sm-4
+                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    |    
+                  .col-sm-8
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[24][v_v_bhava]')
+            |
+            hr
+            .form-group.row
+              .col-sm-4
+                label(for='literal_meaning') 4. Literal Meaning of the verse
+              |     
+              .col-sm-8
+                textarea#literal_meaning.form-control(name='literal_meaning[sanskrit]', placeholder='Devanagari' rows='4')
+                |
+                textarea#literal_meaning.form-control(type='text', name='literal_meaning[english]', placeholder='English' rows='4')
+                |
+                textarea#literal_meaning.form-control(type='text', name='literal_meaning[kannada]', placeholder='Kannada' rows='4')
+                |
+                textarea#literal_meaning.form-control(type='text', name='literal_meaning[hindi]', placeholder='Hindi' rows='4')
+            |
+            hr 
+            .form-group
+              label(for='sandhis') 5. Sandhi-s
+              | 
+              .form-group.row
+                .col-sm-3
+                  input#purvapada(type='text', name='sandhi[0][purvapada]', placeholder='Purvapada')
+                |
+                .col-sm-3
+                  input#uttarapada(type='text', name='sandhi[0][uttarapada]', placeholder='Uttarapada')
+                |
+                .col-sm-3
+                  input#sandhi_name(type='text', name='sandhi[0][sandhi_name]', placeholder='Name of the Sandhi')
+                |
+                .col-sm-3
+                  input#other_details(type='text', name='sandhi[0][other_details]', placeholder='Other details')
+                |
+              .form-group.row
+                  .col-sm-3
+                    input#purvapada(type='text', name='sandhi[1][purvapada]', placeholder='Purvapada')
+                  |
+                  .col-sm-3
+                    input#uttarapada(type='text', name='sandhi[1][uttarapada]', placeholder='Uttarapada')
+                  |
+                  .col-sm-3
+                    input#sandhi_name(type='text', name='sandhi[1][sandhi_name]', placeholder='Name of the Sandhi')
+                  |
+                  .col-sm-3
+                    input#other_details(type='text', name='sandhi[1][other_details]', placeholder='Other details')
+                  |
+              .form-group.row
+                    .col-sm-3
+                      input#purvapada(type='text', name='sandhi[2][purvapada]', placeholder='Purvapada')
+                    |
+                    .col-sm-3
+                      input#uttarapada(type='text', name='sandhi[2][uttarapada]', placeholder='Uttarapada')
+                    |
+                    .col-sm-3
+                      input#sandhi_name(type='text', name='sandhi[2][sandhi_name]', placeholder='Name of the Sandhi')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='sandhi[2][other_details]', placeholder='Other details')
+                    |
+              .form-group.row
+                    .col-sm-3
+                      input#purvapada(type='text', name='sandhi[3][purvapada]', placeholder='Purvapada')
+                    |
+                    .col-sm-3
+                      input#uttarapada(type='text', name='sandhi[3][uttarapada]', placeholder='Uttarapada')
+                    |
+                    .col-sm-3
+                      input#sandhi_name(type='text', name='sandhi[3][sandhi_name]', placeholder='Name of the Sandhi')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='sandhi[3][other_details]', placeholder='Other details')
+                    |
+              .form-group.row
+                    .col-sm-3
+                      input#purvapada(type='text', name='sandhi[4][purvapada]', placeholder='Purvapada')
+                    |
+                    .col-sm-3
+                      input#uttarapada(type='text', name='sandhi[4][uttarapada]', placeholder='Uttarapada')
+                    |
+                    .col-sm-3
+                      input#sandhi_name(type='text', name='sandhi[4][sandhi_name]', placeholder='Name of the Sandhi')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='sandhi[4][other_details]', placeholder='Other details')
+                    |
+              .form-group.row
+                    .col-sm-3
+                      input#purvapada(type='text', name='sandhi[5][purvapada]', placeholder='Purvapada')
+                    |
+                    .col-sm-3
+                      input#uttarapada(type='text', name='sandhi[5][uttarapada]', placeholder='Uttarapada')
+                    |
+                    .col-sm-3
+                      input#sandhi_name(type='text', name='sandhi[5][sandhi_name]', placeholder='Name of the Sandhi')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='sandhi[5][other_details]', placeholder='Other details')
+                    |
+              .form-group.row
+                    .col-sm-3
+                      input#purvapada(type='text', name='sandhi[6][purvapada]', placeholder='Purvapada')
+                    |
+                    .col-sm-3
+                      input#uttarapada(type='text', name='sandhi[6][uttarapada]', placeholder='Uttarapada')
+                    |
+                    .col-sm-3
+                      input#sandhi_name(type='text', name='sandhi[6][sandhi_name]', placeholder='Name of the Sandhi')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='sandhi[6][other_details]', placeholder='Other details')
+                    |
+              .form-group.row
+                    .col-sm-3
+                      input#purvapada(type='text', name='sandhi[7][purvapada]', placeholder='Purvapada')
+                    |
+                    .col-sm-3
+                      input#uttarapada(type='text', name='sandhi[7][uttarapada]', placeholder='Uttarapada')
+                    |
+                    .col-sm-3
+                      input#sandhi_name(type='text', name='sandhi[7][sandhi_name]', placeholder='Name of the Sandhi')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='sandhi[7][other_details]', placeholder='Other details')
+                    |
+              .form-group.row
+                    .col-sm-3
+                      input#purvapada(type='text', name='sandhi[8][purvapada]', placeholder='Purvapada')
+                    |
+                    .col-sm-3
+                      input#uttarapada(type='text', name='sandhi[8][uttarapada]', placeholder='Uttarapada')
+                    |
+                    .col-sm-3
+                      input#sandhi_name(type='text', name='sandhi[8][sandhi_name]', placeholder='Name of the Sandhi')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='sandhi[8][other_details]', placeholder='Other details')
+                    |
+              .form-group.row
+                    .col-sm-3
+                      input#purvapada(type='text', name='sandhi[9][purvapada]', placeholder='Purvapada')
+                    |
+                    .col-sm-3
+                      input#uttarapada(type='text', name='sandhi[9][uttarapada]', placeholder='Uttarapada')
+                    |
+                    .col-sm-3
+                      input#sandhi_name(type='text', name='sandhi[9][sandhi_name]', placeholder='Name of the Sandhi')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='sandhi[9][other_details]', placeholder='Other details')
+              |
+            hr
+            .form-group
+                  label(for='samasas') 6. Samasa-s
+                  | 
+                  .form-group.row
+                    .col-sm-3
+                      input#vigraha_vakya(type='text', name='samasa[0][vigraha_vakya]', placeholder='Vigraha Vakya')
+                    |
+                    .col-sm-3
+                      input#samasa_name(type='text', name='samasa[0][samasa_name]', placeholder='Name of the Samasa')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='samasa[0][other_details]', placeholder='Other details')
+                    |
+                  .form-group.row
+                    .col-sm-3
+                      input#vigraha_vakya(type='text', name='samasa[1][vigraha_vakya]', placeholder='Vigraha Vakya')
+                    |
+                    .col-sm-3
+                      input#samasa_name(type='text', name='samasa[1][samasa_name]', placeholder='Name of the Samasa')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='samasa[1][other_details]', placeholder='Other details')
+                    |
+                  .form-group.row
+                    .col-sm-3
+                      input#vigraha_vakya(type='text', name='samasa[2][vigraha_vakya]', placeholder='Vigraha Vakya')
+                    |
+                    .col-sm-3
+                      input#samasa_name(type='text', name='samasa[2][samasa_name]', placeholder='Name of the Samasa')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='samasa[2][other_details]', placeholder='Other details')
+                    |
+                  .form-group.row
+                    .col-sm-3
+                      input#vigraha_vakya(type='text', name='samasa[3][vigraha_vakya]', placeholder='Vigraha Vakya')
+                    |
+                    .col-sm-3
+                      input#samasa_name(type='text', name='samasa[3][samasa_name]', placeholder='Name of the Samasa')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='samasa[3][other_details]', placeholder='Other details')
+                    |
+                  .form-group.row
+                    .col-sm-3
+                      input#vigraha_vakya(type='text', name='samasa[4][vigraha_vakya]', placeholder='Vigraha Vakya')
+                    |
+                    .col-sm-3
+                      input#samasa_name(type='text', name='samasa[4][samasa_name]', placeholder='Name of the Samasa')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='samasa[4][other_details]', placeholder='Other details')
+                    |
+                  .form-group.row
+                    .col-sm-3
+                      input#vigraha_vakya(type='text', name='samasa[5][vigraha_vakya]', placeholder='Vigraha Vakya')
+                    |
+                    .col-sm-3
+                      input#samasa_name(type='text', name='samasa[5][samasa_name]', placeholder='Name of the Samasa')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='samasa[5][other_details]', placeholder='Other details')
+                    |
+                  .form-group.row
+                    .col-sm-3
+                      input#vigraha_vakya(type='text', name='samasa[6][vigraha_vakya]', placeholder='Vigraha Vakya')
+                    |
+                    .col-sm-3
+                      input#sandhi_name(type='text', name='samasa[6][samasa_name]', placeholder='Name of the Samasa')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='samasa[6][other_details]', placeholder='Other details')
+                    |
+                  .form-group.row
+                    .col-sm-3
+                      input#vigraha_vakya(type='text', name='samasa[7][vigraha_vakya]', placeholder='Vigraha Vakya')
+                    |
+                    .col-sm-3
+                      input#samasa_name(type='text', name='samasa[7][samasa_name]', placeholder='Name of the Samasa')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='samasa[7][other_details]', placeholder='Other details')
+                    |
+                  .form-group.row
+                    .col-sm-3
+                      input#vigraha_vakya(type='text', name='samasa[8][vigraha_vakya]', placeholder='Vigraha Vakya')
+                    |
+                    .col-sm-3
+                      input#samasa_name(type='text', name='samasa[8][samasa_name]', placeholder='Name of the Samasa')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='samasa[8][other_details]', placeholder='Other details')
+                    |
+                  .form-group.row
+                    .col-sm-3
+                      input#vigraha_vakya(type='text', name='samasa[9][vigraha_vakya]', placeholder='Vigraha Vakya')
+                    |
+                    .col-sm-3
+                      input#samasa_name(type='text', name='samasa[9][samasa_name]', placeholder='Name of the Samasa')
+                    |
+                    .col-sm-3
+                      input#other_details(type='text', name='samasa[9][other_details]', placeholder='Other details')
+            |
+            hr
+            .form-group.row
+              .col-sm-4
+                label(for='chandas_vritta') 7. Chandas and Vritta
+              |     
+              .col-sm-8
+                input#sloka_num.form-control(type='text', name='chandas_vritta', placeholder='Devanagari')
+            |
+            hr
+            .form-group.row
+              .col-sm-4
+                label(for='alankara') 8. Alankara
+              |     
+              .col-sm-8
+                input#sloka_num.form-control(type='text', name='alankara', placeholder='Devanagari')
+            |
+            hr
+            .form-group.row
+              .col-sm-4
+                label(for='anvaya') 9. Anvaya
+              |     
+              .col-sm-8
+                textarea#anvaya.form-control(name='anvaya', placeholder='Devanagari')
+            |
+            hr
+            .form-group.row
+              .col-sm-4
+                label(for='anvaya') 10. Other information
+              |     
+              .col-sm-8
+                textarea#other_information.form-control(name='other_information', placeholder='Devanagari or English' rows='4')
+            |
+            hr
+            .form-group.row
+              .col-sm-4
+                label(for='anvaya') 11. Works for reference
+              |     
+              .col-sm-8
+                textarea#anvaya.form-control(name='works_ref', placeholder='Devanagari' rows='4')
             button.btn.btn-primary(type='submit') Submit
             #result
