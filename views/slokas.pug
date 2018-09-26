@@ -4,15 +4,52 @@ block content
   h1 Ramayana Sangraha
   p.lead Slokas
   hr
-  .row
-    for sloka in slokas
-      h4
-        span= sloka.sloka_num 
-        nbsp . 
-        span= sloka.sloka_text 
-      h3 Padavibhaga 
-        ul(type=none)
-          li= sloka.padavibhaga[pada] 
+  table.table.table-striped
+    thead
+      tr
+        th Sl. No.
+        |
+        th Sloka text
+        |
+        th Padavibhaga
+        |
+        th Literal Meaning
+        |
+        th Sandhi-s
+        |
+        th Samasa-s
+        |
+        th Chandas and Vritta 
+        |
+        th Alankara
+        |
+        th Anvaya
+        |
+        th Other information
+        |
+        th Works for reference
+    |
+    tbody
+      for sloka in slokas
+        tr
+          th #{sloka.sloka_num}
+          | 
+          td #{sloka.sloka_text}
+          |
+          td
+            for word in sloka.padavibhaga
+              h5 Word #{word.sl_num}. #{word.pada}
+              p= word.sub_or_dhatu
+              if(word.sub_or_dhatu == 'Subanta')
+                p= word.anta
+                p= word.linga
+                p= word.sub_vachana
+          |
+          td
+            #{sloka.literal_meaning.sanskrit}
+            #{sloka.literal_meaning.english}
+            #{sloka.literal_meaning.kannada}
+            #{sloka.literal_meaning.hindi}
           
           
           

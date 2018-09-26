@@ -32,14 +32,7 @@ exports.getSuccess = (req, res) => {
  * POST /form
  */
 exports.postForm = (req, res, next) => {
-  const errors = req.getValidationResult();
-
-  if (errors) {
-    req.flash('errors', errors);
-    return res.redirect('/login');
-  }
-
-  console.log(req.body);
+ // console.log(req.body);
   
  const sloka = new Sloka(req.body);
 
