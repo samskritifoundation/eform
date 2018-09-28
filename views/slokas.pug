@@ -4,7 +4,7 @@ block content
   h1 Ramayana Sangraha
   p.lead Slokas
   hr
-  table.table.table-striped
+  table.table.table-striped.table-responsive
     thead
       tr
         th Sl. No.
@@ -34,22 +34,85 @@ block content
         tr
           th #{sloka.sloka_num}
           | 
-          td #{sloka.sloka_text}
+          td
+            pre #{sloka.sloka_text}
           |
           td
             for word in sloka.padavibhaga
-              h5 Word #{word.sl_num}. #{word.pada}
-              p= word.sub_or_dhatu
-              if(word.sub_or_dhatu == 'Subanta')
-                p= word.anta
-                p= word.linga
-                p= word.sub_vachana
+              if(word.pada)
+                h4(style='line-height:1.5em') Word #{word.sl_num} - #{word.pada}
+                p= word.sub_or_dhatu
+                if(word.sub_or_dhatu == 'Subanta')
+                  p Anta: #{word.anta}
+                  p Linga: #{word.linga}
+                  p Vachana: #{word.sub_vachana}
+                else
+                  p Lakara: #{word.lakara}
+                  p Purusha: #{word.purusha}
+                  p Vachana: #{word.dhatu_vachana}
+                  p= word.atmane_or_parasmai
+                  p= word.set_vet_anit
+                  p= word.specific_type
+                p 
+                  if(word.synonyms.length > 0)
+                    |Synonyms:
+                    each syn in word.synonyms
+                      if(syn)
+                        li= syn
+              if(word.word_meaning)
+                p Meaning: #{word.word_meaning}
+              if(word.visheshana_visheshya_bhava)
+                p Visheshana-Visheshya Bhava: #{word.visheshana_visheshya_bhava}
+            hr
           |
           td
-            #{sloka.literal_meaning.sanskrit}
-            #{sloka.literal_meaning.english}
-            #{sloka.literal_meaning.kannada}
-            #{sloka.literal_meaning.hindi}
+            if(sloka.literal_meaning.sanskrit)
+              h4 Sanskrit:
+              p= sloka.literal_meaning.sanskrit
+            if(sloka.literal_meaning.english)
+              h4 Engligh
+              p= sloka.literal_meaning.english
+            if(sloka.literal_meaning.kannada)
+              h4 Kannada
+              p= sloka.literal_meaning.kannada
+            if(sloka.literal_meaning.hindi)
+              h4 Hindi
+              p= sloka.literal_meaning.hindi
+          |
+          td
+            for sandhi,index in sloka.sandhi
+              if(sandhi.sandhi_name)
+                ul(style='list-style-type:none')
+                  li #{index +1}. #{sandhi.sandhi_name} -- #{sandhi.purvapada} + #{sandhi.uttarapada}  
+                  |Other Details: #{sandhi.other_details}
+          |
+          td
+            for samasa,index in sloka.samasa
+              if(samasa.samasa_name)
+                ul(style='list-style-type:none')
+                  li #{index +1}. #{samasa.samasa_name} -- #{samasa.vigraha_vakya}  
+                  |Other Details: #{samasa.other_details}
+          |
+          td
+            if(sloka.chandas_vritta)
+              p= sloka.chandas_vritta
+          |
+          td
+            if(sloka.alankara)
+              p= sloka.alankara
+          |
+          td
+            if(sloka.anvaya)
+              p= sloka.anvaya
+          |
+          td
+            if(sloka.other_information)
+              p= sloka.other_information
+          |
+          td
+            if(sloka.works_ref)
+              p= sloka.works_ref
           
           
           
+  

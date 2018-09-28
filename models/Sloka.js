@@ -16,10 +16,10 @@ const slokaSchema = new mongoose.Schema({
       lakara: String,
       purusha: String,
       dhatu_vachana: String,
-      dhatu_meaning: String,
-      atman_or_paras: String,
-      setvetanit: String,
+      atmane_or_parasmai: String,
+      set_vet_anit: String,
       specific_type: String,
+      word_meaning: String,
       synonyms: Array,
       visheshana_visheshya_bhava: String
     }

@@ -131,7 +131,7 @@ app.post('/account/delete', passportConfig.isAuthenticated, userController.postD
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 app.get('/form',passportConfig.isAuthenticated, formController.getForm);
 app.post('/form',passportConfig.isAuthenticated, formController.postForm);
-app.get('/slokas',slokaController.getSloka);
+app.get('/slokas',passportConfig.isAuthenticated, slokaController.getSloka);
 /**
  * API examples routes.
  */

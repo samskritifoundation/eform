@@ -11,12 +11,12 @@ block content
             label(for='sloka_num') 1. Sloka Number
           |     
           .col-sm-8
-            input#sloka_num.form-control(type='text', name='sloka_num', placeholder='Alphanumeric input')
+            input#sloka_num.form-control(type='text', name='sloka_num', placeholder='Alphanumeric input' required)
           |   
           .form-group
             label(for='sloka_text') 2. Sloka text
             |     
-            textarea#sloka_text.form-control(name='sloka_text', placeholder='Devanagari text', rows='4')
+            textarea#sloka_text.form-control(name='sloka_text', placeholder='Devanagari text', rows='4' required)
           |   
           fieldset
             legend 3. Padavibhaga
@@ -134,8 +134,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[0][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[0][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[0][atmane_or_parasmai]', value='Atmanepadi')
@@ -190,25 +188,34 @@ block content
                           |           
                           option other
                       |
-                  .form-group
-                    label(for='word_synonyms') Synonyms of the word (Devanagari)
-                    |     
-                    input#word_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][0]', placeholder='Synonym 1')
-                    |   
-                    input#word_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][1]', placeholder='Synonym 2')
-                    |   
-                    input#word_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][2]', placeholder='Synonym 3')
-                    |   
-                    input#slword_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][3]', placeholder='Synonym 4')
-                    |   
-                    input#word_synonyms.form-control(type='text', name='padavibhaga[0][word_synonyms][4]', placeholder='Synonym 5')
-                    |
                   .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[0][word_meaning]', placeholder='in English', rows='2')
+                  |
+                  .form-group
+                  .col-sm-12
+                      label(for='word_synonyms') Synonyms of the word (Devanagari)
+                      |     
+                      input#word_synonyms.form-control(type='text', name='padavibhaga[0][synonyms][0]', placeholder='Synonym 1')
+                      |   
+                      input#word_synonyms.form-control(type='text', name='padavibhaga[0][synonyms][1]', placeholder='Synonym 2')
+                      |   
+                      input#word_synonyms.form-control(type='text', name='padavibhaga[0][synonyms][2]', placeholder='Synonym 3')
+                      |   
+                      input#slword_synonyms.form-control(type='text', name='padavibhaga[0][synonyms][3]', placeholder='Synonym 4')
+                      |   
+                      input#word_synonyms.form-control(type='text', name='padavibhaga[0][synonyms][4]', placeholder='Synonym 5')
+                  |
+                  .form-group.row
+                  .col-sm-12
                     .col-sm-4
                       label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |
                     .col-sm-8
-                      input#v_v_bhava.form-control(type='text', name='padavibhaga[0][v_v_bhava]')
+                      input#v_v_bhava.form-control(type='text', name='padavibhaga[0][visheshana_visheshya_bhava]')
             |
             #word2.collapse
               br
@@ -245,8 +252,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[1][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[1][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[1][atmane_or_parasmai]', value='Atmanepadi')
@@ -302,25 +307,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[1][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[1][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[1][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[1][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[1][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[1][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[1][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[1][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[1][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[1][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[1][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[1][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[1][visheshana_visheshya_bhava]')
             |
             #word3.collapse
               br
@@ -357,8 +369,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[2][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[2][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[2][atmane_or_parasmai]', value='Atmanepadi')
@@ -414,25 +424,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[2][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[2][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[2][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[2][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[2][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[2][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[2][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[2][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[2][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[2][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[2][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[2][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[2][visheshana_visheshya_bhava]')
             |
             #word4.collapse
               br
@@ -469,8 +486,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[3][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[3][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[3][atmane_or_parasmai]', value='Atmanepadi')
@@ -526,25 +541,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[3][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[3][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[3][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[3][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[3][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[3][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[3][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[3][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[3][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[3][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[3][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[3][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[3][visheshana_visheshya_bhava]')
             |
             #word5.collapse
               br
@@ -581,8 +603,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[4][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[4][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[4][atmane_or_parasmai]', value='Atmanepadi')
@@ -638,25 +658,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[0][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[4][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[4][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[4][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[4][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[4][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[4][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[4][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[4][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[4][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[4][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[4][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[4][visheshana_visheshya_bhava]')
             |
             #word6.collapse
               br
@@ -693,8 +720,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[5][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[5][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[5][atmane_or_parasmai]', value='Atmanepadi')
@@ -750,25 +775,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[5][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[5][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[5][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[5][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[5][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[5][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[5][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[5][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[5][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[5][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[5][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[5][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[5][visheshana_visheshya_bhava]')
             |
             #word7.collapse
               br
@@ -805,8 +837,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[6][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[6][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[6][atmane_or_parasmai]', value='Atmanepadi')
@@ -862,25 +892,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[6][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[6][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[6][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[6][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[6][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[6][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[6][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[6][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[6][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[6][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[6][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[6][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[6][visheshana_visheshya_bhava]')
             |
             #word8.collapse
               br
@@ -917,8 +954,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[7][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[7][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[7][atmane_or_parasmai]', value='Atmanepadi')
@@ -974,25 +1009,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[7][word_meaning]', placeholder='in English', rows='2')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[7][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[7][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[7][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[7][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[7][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[7][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[7][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[7][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[7][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[7][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[7][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[7][visheshana_visheshya_bhava]')
             |
             #word9.collapse
               br
@@ -1029,8 +1071,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[8][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[8][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[8][atmane_or_parasmai]', value='Atmanepadi')
@@ -1086,25 +1126,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[8][word_meaning]', placeholder='in English', rows='2')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[8][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[8][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[8][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[8][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[8][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[8][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[8][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[8][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[8][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[8][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[8][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[8][visheshana_visheshya_bhava]')
             |
             #word10.collapse
               br
@@ -1141,8 +1188,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[9][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[9][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[9][atmane_or_parasmai]', value='Atmanepadi')
@@ -1198,25 +1243,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[9][word_meaning]', placeholder='in English')
+                  | 
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[9][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[9][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[9][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[9][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[9][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[9][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[9][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[9][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[9][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[9][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[9][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[9][visheshana_visheshya_bhava]')
             |
             #word11.collapse
               br
@@ -1253,8 +1305,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[10][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[10][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[10][atmane_or_parasmai]', value='Atmanepadi')
@@ -1310,25 +1360,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[10][word_meaning]', placeholder='in English', rows='2')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[10][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[10][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[10][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[10][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[10][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[10][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[10][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[10][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[10][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[10][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[10][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[10][visheshana_visheshya_bhava]')
             |
             #word12.collapse
               br
@@ -1365,8 +1422,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[11][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[11][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[11][atmane_or_parasmai]', value='Atmanepadi')
@@ -1422,25 +1477,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[11][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[11][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[11][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[11][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[11][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[11][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[11][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[11][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[11][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[11][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[11][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[11][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[11][visheshana_visheshya_bhava]')
             |
             #word13.collapse
               br
@@ -1477,8 +1539,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[12][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[12][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[12][atmane_or_parasmai]', value='Atmanepadi')
@@ -1534,25 +1594,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[12][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[12][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[12][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[12][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[12][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[12][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[12][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[12][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[12][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[12][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[12][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[12][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[12][visheshana_visheshya_bhava]')
             |
             #word14.collapse
               br
@@ -1589,8 +1656,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[13][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[13][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[13][atmane_or_parasmai]', value='Atmanepadi')
@@ -1646,25 +1711,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[13][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[13][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[13][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[13][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[13][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[13][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[13][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[13][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[13][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[13][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[13][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[13][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[13][visheshana_visheshya_bhava]')
             |
             #word15.collapse
               br
@@ -1701,8 +1773,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[14][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[14][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[14][atmane_or_parasmai]', value='Atmanepadi')
@@ -1758,25 +1828,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[14][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[14][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[14][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[14][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[14][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[14][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[14][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[14][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[14][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[14][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[14][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[14][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[14][visheshana_visheshya_bhava]')
             |
             #word16.collapse
               br
@@ -1813,8 +1890,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[15][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[15][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[15][atmane_or_parasmai]', value='Atmanepadi')
@@ -1870,25 +1945,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[15][word_meaning]', placeholder='in English', rows='2')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[15][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[15][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[15][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[15][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[15][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[15][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[15][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[15][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[15][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[15][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[15][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[15][visheshana_visheshya_bhava]')
             |
             #word17.collapse
               br
@@ -1925,8 +2007,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[16][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[16][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[16][atmane_or_parasmai]', value='Atmanepadi')
@@ -1982,25 +2062,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[16][word_meaning]', placeholder='in English', rows='2')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[16][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[16][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[16][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[16][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[16][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[16][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[16][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[16][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[16][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[16][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[16][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[16][visheshana_visheshya_bhava]')
             |
             #word18.collapse
               br
@@ -2037,8 +2124,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[17][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[17][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[17][atmane_or_parasmai]', value='Atmanepadi')
@@ -2094,25 +2179,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[17][word_meaning]', placeholder='in English', rows='2')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[17][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[17][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[17][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[17][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[17][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[17][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[17][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[17][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[17][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[17][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[17][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[17][visheshana_visheshya_bhava]')
             |
             #word19.collapse
               br
@@ -2149,8 +2241,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[18][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[18][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[18][atmane_or_parasmai]', value='Atmanepadi')
@@ -2206,25 +2296,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[18][word_meaning]', placeholder='in English', rows='2')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[18][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[18][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[18][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[18][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[18][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[18][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[18][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[18][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[18][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[18][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[18][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[18][visheshana_visheshya_bhava]')
             |
             #word20.collapse
               br
@@ -2260,8 +2357,6 @@ block content
                     input#pada.form-control(type='text', name='padavibhaga[19][purusha]', placeholder='Purusha')
                     |
                     input#pada.form-control(type='text', name='padavibhaga[19][dhatu_vachana]', placeholder='Vachana')
-                    |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[19][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
                     |
                     .form-check.form-check-inline
                       .col-sm-6
@@ -2318,25 +2413,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[19][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[19][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[19][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[19][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[19][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[19][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[19][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[19][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[19][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[19][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[19][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[19][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[19][visheshana_visheshya_bhava]')
             |
             #word21.collapse
               br
@@ -2373,8 +2475,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[20][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[20][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[20][atmane_or_parasmai]', value='Atmanepadi')
@@ -2430,25 +2530,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[20][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[20][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[20][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[20][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[20][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[20][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[20][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[20][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[20][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[20][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[20][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[20][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[20][visheshana_visheshya_bhava]')
             |
             #word22.collapse
               br
@@ -2485,8 +2592,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[21][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[21][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[21][atmane_or_parasmai]', value='Atmanepadi')
@@ -2542,25 +2647,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[21][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[21][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[21][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[21][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[21][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[21][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[21][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[21][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[21][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[21][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[21][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[21][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[21][visheshana_visheshya_bhava]')
             |
             #word23.collapse
               br
@@ -2597,8 +2709,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[22][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[22][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[22][atmane_or_parasmai]', value='Atmanepadi')
@@ -2654,25 +2764,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[22][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[22][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[22][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[22][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[22][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[22][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[22][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[22][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[22][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[22][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[22][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[22][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[22][visheshana_visheshya_bhava]')
             |
             #word24.collapse
               br
@@ -2709,8 +2826,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[23][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[23][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[23][atmane_or_parasmai]', value='Atmanepadi')
@@ -2766,25 +2881,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[23][word_meaning]', placeholder='in English', rows='2')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[23][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[23][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[23][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[23][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[23][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[23][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[23][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[23][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[23][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[23][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[23][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[23][visheshana_visheshya_bhava]')
             |
             #word25.collapse
               br
@@ -2821,8 +2943,6 @@ block content
                     |
                     input#pada.form-control(type='text', name='padavibhaga[24][dhatu_vachana]', placeholder='Vachana')
                     |   
-                    input#dhatu_meaning.form-control(type='text', name='padavibhaga[24][dhatu_meaning]', placeholder='Meaning of Dhatu', rows='4')
-                    |
                     .form-check.form-check-inline
                       .col-sm-6
                         input#atmane_or_parasmai.form-check-input(type='radio', name='padavibhaga[24][atmane_or_parasmai]', value='Atmanepadi')
@@ -2878,25 +2998,32 @@ block content
                           |           
                           option other
                     |
+                .form-group.row
+                  .col-sm-4
+                    label(for='word_meaning') Meaning of the word
+                  |
+                  .col-sm-8
+                    input#word_meaning.form-control(type='text', name='padavibhaga[248][word_meaning]', placeholder='in English')
+                  |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
                   |     
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[24][word_synonyms][0]', placeholder='Synonym 1')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[24][synonyms][0]', placeholder='Synonym 1')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[24][word_synonyms][1]', placeholder='Synonym 2')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[24][synonyms][1]', placeholder='Synonym 2')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[24][word_synonyms][2]', placeholder='Synonym 3')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[24][synonyms][2]', placeholder='Synonym 3')
                   |   
-                  input#slword_synonyms.form-control(type='text', name='padavibhaga[24][word_synonyms][3]', placeholder='Synonym 4')
+                  input#slword_synonyms.form-control(type='text', name='padavibhaga[24][synonyms][3]', placeholder='Synonym 4')
                   |   
-                  input#word_synonyms.form-control(type='text', name='padavibhaga[24][word_synonyms][4]', placeholder='Synonym 5')
+                  input#word_synonyms.form-control(type='text', name='padavibhaga[24][synonyms][4]', placeholder='Synonym 5')
                   |
                 .form-group.row
                   .col-sm-4
                     label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[24][v_v_bhava]')
+                    input#v_v_bhava.form-control(type='text', name='padavibhaga[24][visheshana_visheshya_bhava]')
             |
             hr
             .form-group.row
