@@ -18,17 +18,6 @@ exports.getForm = (req, res) => {
 };
 
 /**
- * GET /success
- */
-exports.getSuccess = (req, res) => {
-  if (req.sloka) {
-    return res.render('slokas', {
-      title: 'Slokas'
-    });
-  }
-};
-
-/**
  * POST /form
  */
 exports.postForm = (req, res, next) => {
@@ -44,7 +33,7 @@ exports.postForm = (req, res, next) => {
     }
     sloka.save((err) => {
       if (err) { return next(err); }
-        res.redirect('/slokas');
+        res.redirect('/');
       });
     // db.sessions.drop()
   });  

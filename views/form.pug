@@ -119,9 +119,72 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[0][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[0][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[0][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[0][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[0][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[0][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[0][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[0][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details(type='text', name='padavibhaga[0][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[0][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details(type='text', name='padavibhaga[0][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[0][sub_or_dhatu]', value='Dhatu')
@@ -237,9 +300,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[1][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[1][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[1][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[1][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[1][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[1][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[1][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[1][sub_or_dhatu]', value='Dhatu')
@@ -354,9 +462,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[2][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[2][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[2][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[2][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[2][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[2][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[2][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[2][sub_or_dhatu]', value='Dhatu')
@@ -471,9 +624,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[3][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[3][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[3][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[3][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[3][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[3][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[3][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[3][sub_or_dhatu]', value='Dhatu')
@@ -588,9 +786,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[4][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[4][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[4][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[4][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[4][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[4][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[4][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[4][sub_or_dhatu]', value='Dhatu')
@@ -705,9 +948,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[5][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[5][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[5][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[5][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[5][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[5][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[5][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[5][sub_or_dhatu]', value='Dhatu')
@@ -822,9 +1110,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[6][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[6][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[6][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[6][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[6][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[6][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[6][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[6][sub_or_dhatu]', value='Dhatu')
@@ -939,9 +1272,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[7][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[7][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[7][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[7][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[7][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[7][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[7][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[7][sub_or_dhatu]', value='Dhatu')
@@ -1056,9 +1434,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[8][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[8][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[8][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[8][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[8][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[8][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[8][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[8][sub_or_dhatu]', value='Dhatu')
@@ -1173,9 +1596,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[9][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[9][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[9][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[9][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[9][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[9][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[9][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[9][sub_or_dhatu]', value='Dhatu')
@@ -1290,9 +1758,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[10][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[10][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[10][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[10][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[10][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[10][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[10][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[10][sub_or_dhatu]', value='Dhatu')
@@ -1407,9 +1920,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[11][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[11][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[11][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[11][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[11][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[11][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[11][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[11][sub_or_dhatu]', value='Dhatu')
@@ -1524,9 +2082,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[12][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[12][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[12][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[12][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[12][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[12][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[12][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[12][sub_or_dhatu]', value='Dhatu')
@@ -1641,9 +2244,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[13][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[13][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[13][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[13][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[13][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[13][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[13][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[13][sub_or_dhatu]', value='Dhatu')
@@ -1758,9 +2406,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[14][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[14][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[14][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[14][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[14][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[14][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[14][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[14][sub_or_dhatu]', value='Dhatu')
@@ -1875,9 +2568,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[15][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[15][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[15][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[15][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[15][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[15][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[15][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[15][sub_or_dhatu]', value='Dhatu')
@@ -1992,9 +2730,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[16][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[16][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[16][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[16][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[16][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[16][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[16][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[16][sub_or_dhatu]', value='Dhatu')
@@ -2109,9 +2892,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[17][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[17][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[17][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[17][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[17][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[17][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[17][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[17][sub_or_dhatu]', value='Dhatu')
@@ -2226,9 +3054,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[18][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[18][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[18][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[18][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[18][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[18][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[18][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[18][sub_or_dhatu]', value='Dhatu')
@@ -2343,9 +3216,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[19][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[19][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[19][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[19][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[19][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[19][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[19][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[19][sub_or_dhatu]', value='Dhatu')
@@ -2460,9 +3378,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[20][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[20][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[20][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[20][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[20][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[20][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[20][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[20][sub_or_dhatu]', value='Dhatu')
@@ -2577,9 +3540,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[21][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[21][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[21][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[21][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[21][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[21][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[21][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[21][sub_or_dhatu]', value='Dhatu')
@@ -2694,9 +3702,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[22][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[22][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[22][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[22][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[22][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[22][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[22][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[22][sub_or_dhatu]', value='Dhatu')
@@ -2811,9 +3864,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[23][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[23][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[23][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[23][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[23][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[23][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[23][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[23][sub_or_dhatu]', value='Dhatu')
@@ -2928,9 +4026,54 @@ block content
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[24][anta]', placeholder='Anta')
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[24][linga]', placeholder='Linga')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='linga') Linga
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[24][linga]')
+                          option पु 
+                          |             
+                          option स्त्री
+                          |             
+                          option नपुं
+                      |
                     |
-                    input#pada.form-control(type='text', name='padavibhaga[24][sub_vachana]', placeholder='Vachana')
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vibhakti') Vibhakti
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[24][vibhakti]')
+                          option प्रथमा
+                          |             
+                          option द्वितीया
+                          |             
+                          option तृतीया
+                          |
+                          option चतुर्थी
+                          |
+                          option पञ्चमी
+                          |
+                          option षष्टी
+                          |
+                          option सप्तमी
+                          |
+                          option सं.प्र 
+                    |
+                    .form-group.row
+                      .col-sm-4
+                        label(for='vachana') Vachana
+                      |
+                      .col-sm-8
+                        select.form-control(name='padavibhaga[24][sub_vachana]')
+                          option एक 
+                          |             
+                          option द्वि  
+                          |             
+                          option बहु
+                    |
+                    input#anta.form-control(type='text', name='padavibhaga[24][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[24][sub_or_dhatu]', value='Dhatu')
@@ -3318,3 +4461,4 @@ block content
                 textarea#anvaya.form-control(name='works_ref', placeholder='Devanagari' rows='4')
             button.btn.btn-primary(type='submit') Submit
             #result
+

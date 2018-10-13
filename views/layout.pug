@@ -31,3 +31,11 @@ html
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-XXXXX-X', 'auto');
       ga('send', 'pageview');
+
+    script.
+      document.getElementById('vyutpatti_details').disabled = true
+      document.getElementById('nishpatti_details').disabled = true
+      function enableDisable(bEnable, textBoxID)
+        {
+             document.getElementById(textBoxID).disabled = !bEnable
+        }
