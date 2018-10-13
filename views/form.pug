@@ -348,6 +348,25 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[1][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[1][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details2')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details2(type='text', name='padavibhaga[1][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[1][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details2')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details2(type='text', name='padavibhaga[1][nishpatti_details]', placeholder='Nishpatti Details')
+                  |
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[1][sub_or_dhatu]', value='Dhatu')
