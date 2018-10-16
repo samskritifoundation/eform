@@ -256,7 +256,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[0][word_meaning]', placeholder='in English', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[0][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[0][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[0][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[0][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                   .form-group
                   .col-sm-12
@@ -351,22 +356,21 @@ block content
                     |
                     .form-check.form-check-inline
                       .col-sm-6
-                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[1][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details2')")
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[1][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details1')")
                         |           
                         label.form-check-label(for='Vyutpatti')
                         | Vyutpatti
                         |
-                        input#vyutpatti_details2(type='text', name='padavibhaga[1][vyutpatti_details]', placeholder='Vyutpatti Details')
+                        input#vyutpatti_details1(type='text', name='padavibhaga[1][vyutpatti_details1]', placeholder='Vyutpatti Details')
                       |
                       .form-check.form-check-inline
                       .col-sm-6
-                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[1][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details2')")
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[1][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details1')")
                         |           
                         label.form-check-label(for='Nishpatti')
                         | Nishpatti
                         |
-                        input#nishpatti_details2(type='text', name='padavibhaga[1][nishpatti_details]', placeholder='Nishpatti Details')
-                  |
+                        input#nishpatti_details1(type='text', name='padavibhaga[1][nishpatti_details1]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[1][sub_or_dhatu]', value='Dhatu')
@@ -439,7 +443,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[1][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[1][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[1][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[1][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[1][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -529,6 +538,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[2][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[2][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details2')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details2(type='text', name='padavibhaga[2][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[2][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details2')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details2(type='text', name='padavibhaga[2][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[2][sub_or_dhatu]', value='Dhatu')
@@ -601,7 +628,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[2][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[2][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[2][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[2][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[2][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -691,6 +723,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[3][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[3][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details3')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details3(type='text', name='padavibhaga[3][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[3][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details3')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details3(type='text', name='padavibhaga[3][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[3][sub_or_dhatu]', value='Dhatu')
@@ -763,7 +813,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[3][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[3][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[3][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[3][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[3][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -853,6 +908,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[4][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[4][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details4')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details4(type='text', name='padavibhaga[4][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[4][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details4')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details4(type='text', name='padavibhaga[4][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[4][sub_or_dhatu]', value='Dhatu')
@@ -925,7 +998,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[0][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[4][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[4][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[4][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[4][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -1015,6 +1093,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[5][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[5][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details5')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details5(type='text', name='padavibhaga[5][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[5][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details5')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details5(type='text', name='padavibhaga[5][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[5][sub_or_dhatu]', value='Dhatu')
@@ -1087,7 +1183,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[5][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[5][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[5][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[5][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[5][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -1177,6 +1278,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[6][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[6][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details6')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details6(type='text', name='padavibhaga[6][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[6][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details6')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details6(type='text', name='padavibhaga[6][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[6][sub_or_dhatu]', value='Dhatu')
@@ -1249,7 +1368,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[6][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[6][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[6][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[6][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[6][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -1339,6 +1463,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[7][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[7][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details7')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details7(type='text', name='padavibhaga[7][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[7][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details7')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details7(type='text', name='padavibhaga[7][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[7][sub_or_dhatu]', value='Dhatu')
@@ -1411,7 +1553,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[7][word_meaning]', placeholder='in English', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[7][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[7][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[7][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[7][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -1501,6 +1648,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[8][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[8][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details8')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details8(type='text', name='padavibhaga[8][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[8][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details8')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details8(type='text', name='padavibhaga[8][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[8][sub_or_dhatu]', value='Dhatu')
@@ -1573,7 +1738,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[8][word_meaning]', placeholder='in English', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[8][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[8][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[8][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[8][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -1663,6 +1833,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[9][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[9][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details9')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details9(type='text', name='padavibhaga[9][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[9][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details9')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details9(type='text', name='padavibhaga[9][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[9][sub_or_dhatu]', value='Dhatu')
@@ -1735,7 +1923,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[9][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[9][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[9][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[9][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[9][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   | 
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -1825,6 +2018,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[10][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[10][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details10')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details10(type='text', name='padavibhaga[10][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[10][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details10')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details10(type='text', name='padavibhaga[10][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[10][sub_or_dhatu]', value='Dhatu')
@@ -1897,7 +2108,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[10][word_meaning]', placeholder='in English', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[10][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[10][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[10][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[10][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -1987,6 +2203,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[11][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[11][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details11')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details11(type='text', name='padavibhaga[11][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[11][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details11')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details11(type='text', name='padavibhaga[11][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[11][sub_or_dhatu]', value='Dhatu')
@@ -2059,7 +2293,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[11][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[11][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[11][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[11][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[11][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -2149,6 +2388,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[12][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[12][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details12')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details12(type='text', name='padavibhaga[12][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[12][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details12')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details12(type='text', name='padavibhaga[12][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[12][sub_or_dhatu]', value='Dhatu')
@@ -2221,7 +2478,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[12][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[12][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[12][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[12][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[12][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -2311,6 +2573,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[13][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[13][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details13')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details13(type='text', name='padavibhaga[13][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[13][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details13')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details13(type='text', name='padavibhaga[13][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[13][sub_or_dhatu]', value='Dhatu')
@@ -2383,7 +2663,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[13][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[13][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[13][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[13][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[13][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -2473,6 +2758,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[14][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[14][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details14')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details14(type='text', name='padavibhaga[14][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[14][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details14')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details14(type='text', name='padavibhaga[14][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[14][sub_or_dhatu]', value='Dhatu')
@@ -2545,7 +2848,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[14][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[14][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[14][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[14][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[14][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -2635,6 +2943,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[15][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[15][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details15')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details15(type='text', name='padavibhaga[15][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[15][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details15')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details15(type='text', name='padavibhaga[15][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[15][sub_or_dhatu]', value='Dhatu')
@@ -2707,7 +3033,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[15][word_meaning]', placeholder='in English', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[15][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[15][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[15][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[15][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -2797,6 +3128,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[16][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[16][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details16')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details16(type='text', name='padavibhaga[16][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[16][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details16')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details16(type='text', name='padavibhaga[16][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[16][sub_or_dhatu]', value='Dhatu')
@@ -2869,7 +3218,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[16][word_meaning]', placeholder='in English', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[16][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[16][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[16][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[16][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -2959,6 +3313,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[17][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[17][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details17')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details17(type='text', name='padavibhaga[17][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[17][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details17')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details17(type='text', name='padavibhaga[17][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[17][sub_or_dhatu]', value='Dhatu')
@@ -3031,7 +3403,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[17][word_meaning]', placeholder='in English', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[17][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[17][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[17][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[17][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -3121,6 +3498,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[18][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[18][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details18')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details18(type='text', name='padavibhaga[18][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[18][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details18')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details18(type='text', name='padavibhaga[18][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[18][sub_or_dhatu]', value='Dhatu')
@@ -3193,7 +3588,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[18][word_meaning]', placeholder='in English', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[18][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[18][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[18][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[18][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -3283,6 +3683,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[19][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[19][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details19')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details19(type='text', name='padavibhaga[19][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[19][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details19')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details19(type='text', name='padavibhaga[19][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[19][sub_or_dhatu]', value='Dhatu')
@@ -3355,7 +3773,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[19][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[19][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[19][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[19][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[19][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -3445,6 +3868,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[20][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[20][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details20')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details20(type='text', name='padavibhaga[20][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[20][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details20')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details20(type='text', name='padavibhaga[20][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[20][sub_or_dhatu]', value='Dhatu')
@@ -3517,7 +3958,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[20][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[20][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[20][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[20][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[20][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -3607,6 +4053,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[21][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[21][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details21')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details21(type='text', name='padavibhaga[21][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[21][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details21')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details21(type='text', name='padavibhaga[21][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[21][sub_or_dhatu]', value='Dhatu')
@@ -3679,7 +4143,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[21][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[21][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[21][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[21][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[21][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -3769,6 +4238,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[22][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[22][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details22')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details22(type='text', name='padavibhaga[22][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[22][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details22')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details22(type='text', name='padavibhaga[22][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[22][sub_or_dhatu]', value='Dhatu')
@@ -3841,7 +4328,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[22][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[22][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[22][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[22][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[22][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -3931,6 +4423,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[23][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[23][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details23')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details23(type='text', name='padavibhaga[23][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[23][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details23')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details23(type='text', name='padavibhaga[23][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[23][sub_or_dhatu]', value='Dhatu')
@@ -4003,7 +4513,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[23][word_meaning]', placeholder='in English', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[23][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[23][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[23][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[23][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)
@@ -4093,6 +4608,24 @@ block content
                           option बहु
                     |
                     input#anta.form-control(type='text', name='padavibhaga[24][pratipadikam]', placeholder='Name of the original stem (प्रातिपदिकम्)')
+                    |
+                    .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[24][vyutpatti_nishpatti]', value='Vyutpatti' onclick="enableDisable(this.checked, 'vyutpatti_details24')")
+                        |           
+                        label.form-check-label(for='Vyutpatti')
+                        | Vyutpatti
+                        |
+                        input#vyutpatti_details24(type='text', name='padavibhaga[24][vyutpatti_details]', placeholder='Vyutpatti Details')
+                      |
+                      .form-check.form-check-inline
+                      .col-sm-6
+                        input#vyutpatti_nishpatti.form-check-input(type='checkbox', name='padavibhaga[24][vyutpatti_nishpatti]', value='Nishpatti' onclick="enableDisable(this.checked, 'nishpatti_details24')")
+                        |           
+                        label.form-check-label(for='Nishpatti')
+                        | Nishpatti
+                        |
+                        input#nishpatti_details24(type='text', name='padavibhaga[24][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
                     input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[24][sub_or_dhatu]', value='Dhatu')
@@ -4165,7 +4698,12 @@ block content
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
-                    input#word_meaning.form-control(type='text', name='padavibhaga[248][word_meaning]', placeholder='in English')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[24][word_meaning][sanskrit]', placeholder='in Sanskrit', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[24][word_meaning][english]', placeholder='in English', rows='2')
+                    |
+                    input#word_meaning.form-control(type='text', name='padavibhaga[24][word_meaning][kannada]', placeholder='in Kannada', rows='2')
+                    input#word_meaning.form-control(type='text', name='padavibhaga[24][word_meaning][hindi]', placeholder='in Hindi', rows='2')
                   |
                 .form-group
                   label(for='word_synonyms') Synonyms of the word (Devanagari)

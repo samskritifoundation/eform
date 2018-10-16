@@ -24,7 +24,12 @@ const slokaSchema = new mongoose.Schema({
       atmane_or_parasmai: String,
       set_vet_anit: String,
       specific_type: String,
-      word_meaning: String,
+      word_meaning: {
+        sanskrit: String,
+        english: String,
+        kannada: String,
+        hindi: String
+      },
       synonyms: Array,
       visheshana_visheshya_bhava: String
     }
