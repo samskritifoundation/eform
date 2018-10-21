@@ -3,7 +3,7 @@ const crypto = require('crypto');
 const mongoose = require('mongoose');
 
 const slokaSchema = new mongoose.Schema({
-  sloka_num: { type: String, unique: true },
+  sl_num: { type: String, unique: true },
   sloka_or_gadya: String,
   sloka_text: String,
   gadya_text: String,
