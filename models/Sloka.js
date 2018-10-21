@@ -4,12 +4,14 @@ const mongoose = require('mongoose');
 
 const slokaSchema = new mongoose.Schema({
   sloka_num: { type: String, unique: true },
+  sloka_or_gadya: String,
   sloka_text: String,
+  gadya_text: String,
   padavibhaga: [
     {
       sl_num: Number,
       pada: String,
-      sub_or_dhatu: String,
+      sub_dhatu_avyaya: String,
       anta: String,
       linga: String,
       vibhakti: String,
@@ -24,6 +26,10 @@ const slokaSchema = new mongoose.Schema({
       atmane_or_parasmai: String,
       set_vet_anit: String,
       specific_type: String,
+      word_type: {
+        wordtype: String,
+        details: String
+      },
       word_meaning: {
         sanskrit: String,
         english: String,
@@ -36,6 +42,11 @@ const slokaSchema = new mongoose.Schema({
     ],
   literal_meaning: {
         sanskrit: String,
+        english: String,
+        kannada: String,
+        hindi: String
+      },
+  bhavartha: {
         english: String,
         kannada: String,
         hindi: String
@@ -55,7 +66,7 @@ const slokaSchema = new mongoose.Schema({
       other_details: String
     }
     ],
-  chandas_vritta: String,
+  chandas_vritta: String, // disable for gadya
   alankara: String,
   anvaya: String,
   other_information: String,

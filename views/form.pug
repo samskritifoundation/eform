@@ -8,7 +8,7 @@ block content
       .form-group.row
           input(type='hidden', name='_csrf', value=_csrf)
           .col-sm-4
-            label(for='sloka_num') 1. Sloka Number
+            label(for='sloka_num') 1. Sloka/Gadya Number
           |     
           .col-sm-8
             input#sloka_num.form-control(type='text', name='sloka_num', placeholder='Alphanumeric input' required)
@@ -16,7 +16,7 @@ block content
           .form-group
             label(for='sloka_text') 2. Sloka text
             |     
-            textarea#sloka_text.form-control(name='sloka_text', placeholder='Devanagari text', rows='4' required)
+            textarea#sloka_text.form-control(name='sloka_text', placeholder='Devanagari text', rows='4' required style="font-size:25px; font-weight:bold;")
           |   
           fieldset
             legend 3. Padavibhaga
@@ -113,18 +113,25 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[0][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[0][sub_dhatu_avyaya]', value='Avyaya')
                     |
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[0][sub_dhatu_avyaya]', value='Subanta' checked)
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
-                    input#anta.form-control(type='text', name='padavibhaga[0][anta]', placeholder='Anta')
+                    input#anta.form-control.subanta(type='text', name='padavibhaga[0][anta]', placeholder='Anta')
                     |
                     .form-group.row
                       .col-sm-4
                         label(for='linga') Linga
                       |
                       .col-sm-8
-                        select.form-control(name='padavibhaga[0][linga]')
+                        select.form-control.subanta(name='padavibhaga[0][linga]')
                           option पु 
                           |             
                           option स्त्री
@@ -137,7 +144,7 @@ block content
                         label(for='vibhakti') Vibhakti
                       |
                       .col-sm-8
-                        select.form-control(name='padavibhaga[0][vibhakti]')
+                        select.form-control.subanta(name='padavibhaga[0][vibhakti]')
                           option प्रथमा
                           |             
                           option द्वितीया
@@ -159,7 +166,7 @@ block content
                         label(for='vachana') Vachana
                       |
                       .col-sm-8
-                        select.form-control(name='padavibhaga[0][sub_vachana]')
+                        select.form-control.subanta(name='padavibhaga[0][sub_vachana]')
                           option एक 
                           |             
                           option द्वि  
@@ -187,9 +194,9 @@ block content
                         input#nishpatti_details(type='text', name='padavibhaga[0][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[0][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[0][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[0][lakara]', placeholder='Lakara')
                     |
@@ -253,6 +260,20 @@ block content
                       |
                   .form-group.row
                   .col-sm-4
+                    select#slct.form-control(name='padavibhaga[0][word_type][wordtype]' onchange='displayInput(this.id, "details");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details.form-control(type='textbox' name = 'padavibhaga[0][word_type][details]' placeholder = 'Details')
+                  |
+                  .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -283,7 +304,32 @@ block content
                       label(for='v_v_bhava') Visheshana Visheshya Bhava
                     |
                     .col-sm-8
-                      input#v_v_bhava.form-control(type='text', name='padavibhaga[0][visheshana_visheshya_bhava]')
+                      select.form-control(name='padavibhaga[0][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[0][visheshana_visheshya_bhava]" id="v_v_bhava" style='display:none;' placeholder='Please specify')
             |
             #word2.collapse
               br
@@ -299,9 +345,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[1][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[1][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[1][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[1][anta]', placeholder='Anta')
                     |
@@ -373,9 +426,9 @@ block content
                         input#nishpatti_details1(type='text', name='padavibhaga[1][nishpatti_details1]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[1][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[1][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[1][lakara]', placeholder='Lakara')
                     |
@@ -437,7 +490,21 @@ block content
                           option yan
                           |           
                           option other
-                    |
+                      |
+                .form-group.row
+                  .col-sm-4
+                    select#slct1.form-control(name='padavibhaga[1][word_type][wordtype]' onchange='displayInput(this.id, "details1");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details1.form-control(type='textbox' name = 'padavibhaga[1][word_type][details]' placeholder = 'Details')
+                  |
                 .form-group.row
                   .col-sm-4
                     label(for='word_meaning') Meaning of the word
@@ -465,10 +532,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava1 ') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[1][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[1][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava1", this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[1][visheshana_visheshya_bhava]" id="v_v_bhava1" style='display:none;' placeholder='Please specify')
             |
             #word3.collapse
               br
@@ -484,9 +576,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[2][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[2][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[2][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[2][anta]', placeholder='Anta')
                     |
@@ -558,9 +657,9 @@ block content
                         input#nishpatti_details2(type='text', name='padavibhaga[2][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[2][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[2][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[2][lakara]', placeholder='Lakara')
                     |
@@ -625,6 +724,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct2.form-control(name='padavibhaga[2][word_type][wordtype]' onchange='displayInput(this.id, "details2");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details2.form-control(type='textbox' name = 'padavibhaga[2][word_type][details]' placeholder = 'Details')
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -650,10 +763,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava2') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[2][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[2][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava2",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[2][visheshana_visheshya_bhava]" id="v_v_bhava2" style='display:none;' placeholder='Please specify') 
             |
             #word4.collapse
               br
@@ -669,9 +807,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[3][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[3][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[3][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[3][anta]', placeholder='Anta')
                     |
@@ -743,9 +888,9 @@ block content
                         input#nishpatti_details3(type='text', name='padavibhaga[3][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[3][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[3][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[3][lakara]', placeholder='Lakara')
                     |
@@ -810,6 +955,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct3.form-control(name='padavibhaga[3][word_type][wordtype]' onchange='displayInput(this.id, "details3");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details3.form-control(type='textbox' name = 'padavibhaga[3][word_type][details]' placeholder = 'Details')
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -835,10 +994,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava3') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[3][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[3][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava3",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[3][visheshana_visheshya_bhava]" id="v_v_bhava3" style='display:none;' placeholder='Please specify') 
             |
             #word5.collapse
               br
@@ -854,9 +1038,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[4][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[4][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[4][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[4][anta]', placeholder='Anta')
                     |
@@ -928,9 +1119,9 @@ block content
                         input#nishpatti_details4(type='text', name='padavibhaga[4][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[4][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[4][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[4][lakara]', placeholder='Lakara')
                     |
@@ -995,6 +1186,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct4.form-control(name='padavibhaga[4][word_type][wordtype]' onchange='displayInput(this.id, "details4");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details4.form-control(type='textbox' name = 'padavibhaga[4][word_type][details]' placeholder = 'Details')
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -1020,10 +1225,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava4') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[4][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[4][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava4",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[4][visheshana_visheshya_bhava]" id="v_v_bhava4" style='display:none;' placeholder='Please specify') 
             |
             #word6.collapse
               br
@@ -1039,9 +1269,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[5][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[5][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[5][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[5][anta]', placeholder='Anta')
                     |
@@ -1113,9 +1350,9 @@ block content
                         input#nishpatti_details5(type='text', name='padavibhaga[5][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[5][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[5][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[5][lakara]', placeholder='Lakara')
                     |
@@ -1180,6 +1417,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct5.form-control(name='padavibhaga[5][word_type][wordtype]' onchange='displayInput(this.id, "details5");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details5.form-control(type='textbox' name = 'padavibhaga[5][word_type][details]' placeholder = 'Details')
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -1205,10 +1456,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava5') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[5][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[5][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava5",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[5][visheshana_visheshya_bhava]" id="v_v_bhava5" style='display:none;' placeholder='Please specify') 
             |
             #word7.collapse
               br
@@ -1224,9 +1500,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[6][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[6][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[6][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[6][anta]', placeholder='Anta')
                     |
@@ -1298,9 +1581,9 @@ block content
                         input#nishpatti_details6(type='text', name='padavibhaga[6][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[6][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[6][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[6][lakara]', placeholder='Lakara')
                     |
@@ -1365,6 +1648,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct6.form-control(name='padavibhaga[6][word_type][wordtype]' onchange='displayInput(this.id, "details6");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details6.form-control(type='textbox' name = 'padavibhaga[6][word_type][details]' placeholder = 'Details' style="display: none;")
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -1390,10 +1687,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava6') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[6][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[6][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava6", this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[6][visheshana_visheshya_bhava]" id="v_v_bhava6" style='display:none;' placeholder='Please specify') 
             |
             #word8.collapse
               br
@@ -1409,9 +1731,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[7][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[7][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[7][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[7][anta]', placeholder='Anta')
                     |
@@ -1483,9 +1812,9 @@ block content
                         input#nishpatti_details7(type='text', name='padavibhaga[7][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[7][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[7][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[7][lakara]', placeholder='Lakara')
                     |
@@ -1550,6 +1879,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct7.form-control(name='padavibhaga[7][word_type][wordtype]' onchange='displayInput(this.id, "details7");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details7.form-control(type='textbox' name = 'padavibhaga[7][word_type][details]' placeholder = 'Details')
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -1575,10 +1918,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava7') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[7][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[7][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava7", this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[7][visheshana_visheshya_bhava]" id="v_v_bhava7" style='display:none;' placeholder='Please specify') 
             |
             #word9.collapse
               br
@@ -1594,9 +1962,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[8][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[8][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[8][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[8][anta]', placeholder='Anta')
                     |
@@ -1668,9 +2043,9 @@ block content
                         input#nishpatti_details8(type='text', name='padavibhaga[8][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[8][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[8][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[8][lakara]', placeholder='Lakara')
                     |
@@ -1735,6 +2110,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct8.form-control(name='padavibhaga[8][word_type][wordtype]' onchange='displayInput(this.id, "details8");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details8.form-control(type='textbox' name = 'padavibhaga[8][word_type][details]' placeholder = 'Details')
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -1760,10 +2149,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava8') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[8][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[8][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava8", this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[8][visheshana_visheshya_bhava]" id="v_v_bhava8" style='display:none;' placeholder='Please specify') 
             |
             #word10.collapse
               br
@@ -1779,9 +2193,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[9][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[9][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[9][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[9][anta]', placeholder='Anta')
                     |
@@ -1853,9 +2274,9 @@ block content
                         input#nishpatti_details9(type='text', name='padavibhaga[9][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[9][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[9][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[9][lakara]', placeholder='Lakara')
                     |
@@ -1920,6 +2341,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct9.form-control(name='padavibhaga[9][word_type][wordtype]' onchange='displayInput(this.id, "details9");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details9.form-control(type='textbox' name = 'padavibhaga[9][word_type][details]' placeholder = 'Details' )
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -1945,10 +2380,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava9') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[9][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[9][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava9",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[9][visheshana_visheshya_bhava]" id="v_v_bhava9" style='display:none;' placeholder='Please specify') 
             |
             #word11.collapse
               br
@@ -1964,9 +2424,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[10][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[10][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[10][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[10][anta]', placeholder='Anta')
                     |
@@ -2038,9 +2505,9 @@ block content
                         input#nishpatti_details10(type='text', name='padavibhaga[10][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[10][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[10][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[10][lakara]', placeholder='Lakara')
                     |
@@ -2105,6 +2572,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct10.form-control(name='padavibhaga[10][word_type][wordtype]' onchange='displayInput(this.id, "details10");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details10.form-control(type='textbox' name = 'padavibhaga[10][word_type][details]' placeholder = 'Details')
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -2130,10 +2611,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava10') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[10][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[10][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava10",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[10][visheshana_visheshya_bhava]" id="v_v_bhava10" style='display:none;' placeholder='Please specify') 
             |
             #word12.collapse
               br
@@ -2149,9 +2655,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[11][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[11][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[11][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[11][anta]', placeholder='Anta')
                     |
@@ -2223,9 +2736,9 @@ block content
                         input#nishpatti_details11(type='text', name='padavibhaga[11][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[11][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[11][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[11][lakara]', placeholder='Lakara')
                     |
@@ -2290,6 +2803,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct11.form-control(name='padavibhaga[11][word_type][wordtype]' onchange='displayInput(this.id, "details11");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details11.form-control(type='textbox' name = 'padavibhaga[11][word_type][details]' placeholder = 'Details')
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -2315,10 +2842,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava11') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[11][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[11][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava11",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[11][visheshana_visheshya_bhava]" id="v_v_bhava11" style='display:none;' placeholder='Please specify') 
             |
             #word13.collapse
               br
@@ -2334,9 +2886,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[12][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[12][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[12][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[12][anta]', placeholder='Anta')
                     |
@@ -2408,9 +2967,9 @@ block content
                         input#nishpatti_details12(type='text', name='padavibhaga[12][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[12][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[12][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[12][lakara]', placeholder='Lakara')
                     |
@@ -2475,6 +3034,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct12.form-control(name='padavibhaga[12][word_type][wordtype]' onchange='displayInput(this.id, "details12");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details12.form-control(type='textbox' name = 'padavibhaga[12][word_type][details]' placeholder = 'Details')
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -2500,10 +3073,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava12') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[12][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[12][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava12",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[12][visheshana_visheshya_bhava]" id="v_v_bhava12" style='display:none;' placeholder='Please specify') 
             |
             #word14.collapse
               br
@@ -2519,9 +3117,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[13][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[13][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[13][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[13][anta]', placeholder='Anta')
                     |
@@ -2593,9 +3198,9 @@ block content
                         input#nishpatti_details13(type='text', name='padavibhaga[13][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[13][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[13][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[13][lakara]', placeholder='Lakara')
                     |
@@ -2660,6 +3265,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct13.form-control(name='padavibhaga[13][word_type][wordtype]' onchange='displayInput(this.id, "details13");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details13.form-control(type='textbox' name = 'padavibhaga[13][word_type][details]' placeholder = 'Details')
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -2685,10 +3304,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava13') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[13][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[13][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava13", this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[13][visheshana_visheshya_bhava]" id="v_v_bhava13" style='display:none;' placeholder='Please specify')
             |
             #word15.collapse
               br
@@ -2704,9 +3348,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[14][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[14][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[14][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[14][anta]', placeholder='Anta')
                     |
@@ -2778,9 +3429,9 @@ block content
                         input#nishpatti_details14(type='text', name='padavibhaga[14][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[14][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[14][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[14][lakara]', placeholder='Lakara')
                     |
@@ -2845,6 +3496,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct14.form-control(name='padavibhaga[14][word_type][wordtype]' onchange='displayInput(this.id, "details14");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details14.form-control(type='textbox' name = 'padavibhaga[14][word_type][details]' placeholder = 'Details' )
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -2870,10 +3535,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava14') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[14][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[14][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava14",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[14][visheshana_visheshya_bhava]" id="v_v_bhava14" style='display:none;' placeholder='Please specify') 
             |
             #word16.collapse
               br
@@ -2889,9 +3579,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[15][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[15][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[15][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[15][anta]', placeholder='Anta')
                     |
@@ -2963,9 +3660,9 @@ block content
                         input#nishpatti_details15(type='text', name='padavibhaga[15][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[15][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[15][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[15][lakara]', placeholder='Lakara')
                     |
@@ -3030,6 +3727,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct15.form-control(name='padavibhaga[15][word_type][wordtype]' onchange='displayInput(this.id, "details15");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details15.form-control(type='textbox' name = 'padavibhaga[15][word_type][details]' placeholder = 'Details' )
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -3055,10 +3766,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava15') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[15][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[15][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava15",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[15][visheshana_visheshya_bhava]" id="v_v_bhava15" style='display:none;' placeholder='Please specify') 
             |
             #word17.collapse
               br
@@ -3074,9 +3810,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[16][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[16][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[16][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[16][anta]', placeholder='Anta')
                     |
@@ -3148,9 +3891,9 @@ block content
                         input#nishpatti_details16(type='text', name='padavibhaga[16][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[16][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[16][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[16][lakara]', placeholder='Lakara')
                     |
@@ -3215,6 +3958,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct16.form-control(name='padavibhaga[16][word_type][wordtype]' onchange='displayInput(this.id, "details16");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details16.form-control(type='textbox' name = 'padavibhaga[16][word_type][details]' placeholder = 'Details' )
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -3240,10 +3997,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava16') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[16][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[16][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava16",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[16][visheshana_visheshya_bhava]" id="v_v_bhava16" style='display:none;' placeholder='Please specify')
             |
             #word18.collapse
               br
@@ -3259,9 +4041,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[17][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[17][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[17][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[17][anta]', placeholder='Anta')
                     |
@@ -3333,9 +4122,9 @@ block content
                         input#nishpatti_details17(type='text', name='padavibhaga[17][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[17][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[17][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[17][lakara]', placeholder='Lakara')
                     |
@@ -3400,6 +4189,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct17.form-control(name='padavibhaga[17][word_type][wordtype]' onchange='displayInput(this.id, "details17");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details17.form-control(type='textbox' name = 'padavibhaga[17][word_type][details]' placeholder = 'Details' )
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -3425,10 +4228,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava17') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[17][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[17][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava17",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[17][visheshana_visheshya_bhava]" id="v_v_bhava17" style='display:none;' placeholder='Please specify') 
             |
             #word19.collapse
               br
@@ -3444,9 +4272,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[18][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[18][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[18][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[18][anta]', placeholder='Anta')
                     |
@@ -3518,9 +4353,9 @@ block content
                         input#nishpatti_details18(type='text', name='padavibhaga[18][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[18][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[18][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[18][lakara]', placeholder='Lakara')
                     |
@@ -3585,6 +4420,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct18.form-control(name='padavibhaga[18][word_type][wordtype]' onchange='displayInput(this.id, "details18");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details18.form-control(type='textbox' name = 'padavibhaga[18][word_type][details]' placeholder = 'Details' )
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -3610,10 +4459,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava18') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[18][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[18][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava18",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[18][visheshana_visheshya_bhava]" id="v_v_bhava18" style='display:none;' placeholder='Please specify') 
             |
             #word20.collapse
               br
@@ -3629,9 +4503,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[19][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[19][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[19][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[19][anta]', placeholder='Anta')
                     |
@@ -3703,9 +4584,9 @@ block content
                         input#nishpatti_details19(type='text', name='padavibhaga[19][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[19][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[19][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[19][lakara]', placeholder='Lakara')
                     |
@@ -3770,6 +4651,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct19.form-control(name='padavibhaga[19][word_type][wordtype]' onchange='displayInput(this.id, "details19");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details19.form-control(type='textbox' name = 'padavibhaga[19][word_type][details]' placeholder = 'Details' )
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -3795,10 +4690,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava19') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[19][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[19][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava19",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[19][visheshana_visheshya_bhava]" id="v_v_bhava19" style='display:none;' placeholder='Please specify') 
             |
             #word21.collapse
               br
@@ -3814,9 +4734,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[20][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[20][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[20][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[20][anta]', placeholder='Anta')
                     |
@@ -3888,9 +4815,9 @@ block content
                         input#nishpatti_details20(type='text', name='padavibhaga[20][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[20][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[20][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[20][lakara]', placeholder='Lakara')
                     |
@@ -3955,6 +4882,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct20.form-control(name='padavibhaga[20][word_type][wordtype]' onchange='displayInput(this.id, "details20");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details20.form-control(type='textbox' name = 'padavibhaga[20][word_type][details]' placeholder = 'Details' )
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -3980,10 +4921,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava20') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[20][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[20][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava20",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[20][visheshana_visheshya_bhava]" id="v_v_bhava20" style='display:none;' placeholder='Please specify') 
             |
             #word22.collapse
               br
@@ -3999,9 +4965,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[21][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[21][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[21][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[21][anta]', placeholder='Anta')
                     |
@@ -4073,9 +5046,9 @@ block content
                         input#nishpatti_details21(type='text', name='padavibhaga[21][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[21][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[21][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[21][lakara]', placeholder='Lakara')
                     |
@@ -4140,6 +5113,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct21.form-control(name='padavibhaga[21][word_type][wordtype]' onchange='displayInput(this.id, "details21");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details21.form-control(type='textbox' name = 'padavibhaga[21][word_type][details]' placeholder = 'Details')
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -4165,10 +5152,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava21') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[21][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[21][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava21",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[21][visheshana_visheshya_bhava]" id="v_v_bhava21" style='display:none;' placeholder='Please specify') 
             |
             #word23.collapse
               br
@@ -4184,9 +5196,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[22][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[22][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[22][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[22][anta]', placeholder='Anta')
                     |
@@ -4258,9 +5277,9 @@ block content
                         input#nishpatti_details22(type='text', name='padavibhaga[22][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[22][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[22][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[22][lakara]', placeholder='Lakara')
                     |
@@ -4325,6 +5344,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct22.form-control(name='padavibhaga[22][word_type][wordtype]' onchange='displayInput(this.id, "details22");')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details22.form-control(type='textbox' name = 'padavibhaga[22][word_type][details]' placeholder = 'Details')
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -4350,10 +5383,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava22') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[22][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[22][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava22",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[22][visheshana_visheshya_bhava]" id="v_v_bhava22" style='display:none;' placeholder='Please specify')
             |
             #word24.collapse
               br
@@ -4369,9 +5427,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[23][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[23][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[23][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[23][anta]', placeholder='Anta')
                     |
@@ -4443,9 +5508,9 @@ block content
                         input#nishpatti_details23(type='text', name='padavibhaga[23][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[23][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[23][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[23][lakara]', placeholder='Lakara')
                     |
@@ -4510,6 +5575,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct23.form-control(name='padavibhaga[23][word_type][wordtype]' )
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details23.form-control(type='textbox' name = 'padavibhaga[23][word_type][details]' placeholder = 'Details' )
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -4535,10 +5614,35 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava23') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[23][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[23][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava23",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[23][visheshana_visheshya_bhava]" id="v_v_bhava23" style='display:none;' placeholder='Please specify') 
             |
             #word25.collapse
               br
@@ -4554,9 +5658,16 @@ block content
                 |
                 .form-group.row.form-check.form-check-inline
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[24][sub_or_dhatu]', value='Subanta' checked)
+                    input#sub_dhatu_avyaya.form-check-input.avyaya(type='radio', name='padavibhaga[24][sub_dhatu_avyaya]', value='Avyaya')
+                    |
+                    label.form-check-label(for='sub_dhatu_avyaya')
+                    | Avyaya
+                |
+                .form-group.row.form-check.form-check-inline
+                  .col-sm-6
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[24][sub_dhatu_avyaya]', value='Subanta' checked)
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Subanta
                     input#anta.form-control(type='text', name='padavibhaga[24][anta]', placeholder='Anta')
                     |
@@ -4628,9 +5739,9 @@ block content
                         input#nishpatti_details24(type='text', name='padavibhaga[24][nishpatti_details]', placeholder='Nishpatti Details')
                   |
                   .col-sm-6
-                    input#sub_or_dhatu.form-check-input(type='radio', name='padavibhaga[24][sub_or_dhatu]', value='Dhatu')
+                    input#sub_dhatu_avyaya.form-check-input(type='radio', name='padavibhaga[24][sub_dhatu_avyaya]', value='Dhatu')
                     |           
-                    label.form-check-label(for='sub_or_dhatu')
+                    label.form-check-label(for='sub_dhatu_avyaya')
                     | Dhatu
                     input#anta.form-control(type='text', name='padavibhaga[24][lakara]', placeholder='Lakara')
                     |
@@ -4695,6 +5806,20 @@ block content
                     |
                 .form-group.row
                   .col-sm-4
+                    select#slct24.form-control(name='padavibhaga[24][word_type][wordtype]')
+                      option(value='Samasa') Samasa
+                      |             
+                      option(value='Taddhita') Taddhita
+                      |             
+                      option(value='Krudanta') Krudanta
+                      |           
+                      option(value='Ekashesha') Ekashesha
+                  |
+                  .col-sm-8
+                    input#details24.form-control(type='textbox' name = 'padavibhaga[24][word_type][details]' placeholder = 'Details' )
+                  |
+                .form-group.row
+                  .col-sm-4
                     label(for='word_meaning') Meaning of the word
                   |
                   .col-sm-8
@@ -4720,15 +5845,48 @@ block content
                   |
                 .form-group.row
                   .col-sm-4
-                    label(for='v_v_bhava') Visheshana Visheshya Bhava
+                    label(for='v_v_bhava24') Visheshana Visheshya Bhava
                     |    
                   .col-sm-8
-                    input#v_v_bhava.form-control(type='text', name='padavibhaga[24][visheshana_visheshya_bhava]')
+                    select.form-control(name='padavibhaga[24][visheshana_visheshya_bhava]' onchange='CheckVV("v_v_bhava24",this.value);')
+                          option Visheshana
+                          |             
+                          option Visheshya
+                          |             
+                          option KriyaVisheshana
+                          |           
+                          option Kartrpada
+                          |           
+                          option Karmapada
+                          |           
+                          option Kriyapada
+                          |           
+                          option Karana
+                          |
+                          option Apadana
+                          |
+                          option Tadarthya / sampradana
+                          |
+                          option Sambandhi
+                          |
+                          option Adhikarana
+                          |
+                          option(value="others") Others
+                          |
+                          input.form-control(type="text" name="padavibhaga[24][visheshana_visheshya_bhava]" id="v_v_bhava24" style='display:none;' placeholder='Please specify') 
             |
             hr
             .form-group.row
               .col-sm-4
-                label(for='literal_meaning') 4. Literal Meaning of the verse
+                label(for='anvaya') 4. Anvaya
+              |     
+              .col-sm-8
+                textarea#anvaya.form-control(name='anvaya', placeholder='Devanagari')
+            |
+            hr
+            .form-group.row
+              .col-sm-4
+                label(for='literal_meaning') 5. Literal Meaning of the verse
               |     
               .col-sm-8
                 textarea#literal_meaning.form-control(name='literal_meaning[sanskrit]', placeholder='Devanagari' rows='4')
@@ -4739,9 +5897,21 @@ block content
                 |
                 textarea#literal_meaning.form-control(type='text', name='literal_meaning[hindi]', placeholder='Hindi' rows='4')
             |
+            hr
+            .form-group.row
+              .col-sm-4
+                label(for='bhavartha') 6. Bhavartha
+              |     
+              .col-sm-8
+                textarea#bhavartha.form-control(type='text', name='bhavartha[english]', placeholder='English' rows='4')
+                |
+                textarea#bhavartha.form-control(type='text', name='bhavartha[kannada]', placeholder='Kannada' rows='4')
+                |
+                textarea#bhavartha.form-control(type='text', name='bhavartha[hindi]', placeholder='Hindi' rows='4')
+            |
             hr 
             .form-group
-              label(for='sandhis') 5. Sandhi-s
+              label(for='sandhis') 7. Sandhi-s
               | 
               .form-group.row
                 .col-sm-3
@@ -4807,75 +5977,10 @@ block content
                     |
                     .col-sm-3
                       input#other_details(type='text', name='sandhi[4][other_details]', placeholder='Other details')
-                    |
-              .form-group.row
-                    .col-sm-3
-                      input#purvapada(type='text', name='sandhi[5][purvapada]', placeholder='Purvapada')
-                    |
-                    .col-sm-3
-                      input#uttarapada(type='text', name='sandhi[5][uttarapada]', placeholder='Uttarapada')
-                    |
-                    .col-sm-3
-                      input#sandhi_name(type='text', name='sandhi[5][sandhi_name]', placeholder='Name of the Sandhi')
-                    |
-                    .col-sm-3
-                      input#other_details(type='text', name='sandhi[5][other_details]', placeholder='Other details')
-                    |
-              .form-group.row
-                    .col-sm-3
-                      input#purvapada(type='text', name='sandhi[6][purvapada]', placeholder='Purvapada')
-                    |
-                    .col-sm-3
-                      input#uttarapada(type='text', name='sandhi[6][uttarapada]', placeholder='Uttarapada')
-                    |
-                    .col-sm-3
-                      input#sandhi_name(type='text', name='sandhi[6][sandhi_name]', placeholder='Name of the Sandhi')
-                    |
-                    .col-sm-3
-                      input#other_details(type='text', name='sandhi[6][other_details]', placeholder='Other details')
-                    |
-              .form-group.row
-                    .col-sm-3
-                      input#purvapada(type='text', name='sandhi[7][purvapada]', placeholder='Purvapada')
-                    |
-                    .col-sm-3
-                      input#uttarapada(type='text', name='sandhi[7][uttarapada]', placeholder='Uttarapada')
-                    |
-                    .col-sm-3
-                      input#sandhi_name(type='text', name='sandhi[7][sandhi_name]', placeholder='Name of the Sandhi')
-                    |
-                    .col-sm-3
-                      input#other_details(type='text', name='sandhi[7][other_details]', placeholder='Other details')
-                    |
-              .form-group.row
-                    .col-sm-3
-                      input#purvapada(type='text', name='sandhi[8][purvapada]', placeholder='Purvapada')
-                    |
-                    .col-sm-3
-                      input#uttarapada(type='text', name='sandhi[8][uttarapada]', placeholder='Uttarapada')
-                    |
-                    .col-sm-3
-                      input#sandhi_name(type='text', name='sandhi[8][sandhi_name]', placeholder='Name of the Sandhi')
-                    |
-                    .col-sm-3
-                      input#other_details(type='text', name='sandhi[8][other_details]', placeholder='Other details')
-                    |
-              .form-group.row
-                    .col-sm-3
-                      input#purvapada(type='text', name='sandhi[9][purvapada]', placeholder='Purvapada')
-                    |
-                    .col-sm-3
-                      input#uttarapada(type='text', name='sandhi[9][uttarapada]', placeholder='Uttarapada')
-                    |
-                    .col-sm-3
-                      input#sandhi_name(type='text', name='sandhi[9][sandhi_name]', placeholder='Name of the Sandhi')
-                    |
-                    .col-sm-3
-                      input#other_details(type='text', name='sandhi[9][other_details]', placeholder='Other details')
               |
             hr
             .form-group
-                  label(for='samasas') 6. Samasa-s
+                  label(for='samasas') 8. Samasa-s
                   | 
                   .form-group.row
                     .col-sm-3
@@ -4926,61 +6031,11 @@ block content
                     |
                     .col-sm-3
                       input#other_details(type='text', name='samasa[4][other_details]', placeholder='Other details')
-                    |
-                  .form-group.row
-                    .col-sm-3
-                      input#vigraha_vakya(type='text', name='samasa[5][vigraha_vakya]', placeholder='Vigraha Vakya')
-                    |
-                    .col-sm-3
-                      input#samasa_name(type='text', name='samasa[5][samasa_name]', placeholder='Name of the Samasa')
-                    |
-                    .col-sm-3
-                      input#other_details(type='text', name='samasa[5][other_details]', placeholder='Other details')
-                    |
-                  .form-group.row
-                    .col-sm-3
-                      input#vigraha_vakya(type='text', name='samasa[6][vigraha_vakya]', placeholder='Vigraha Vakya')
-                    |
-                    .col-sm-3
-                      input#sandhi_name(type='text', name='samasa[6][samasa_name]', placeholder='Name of the Samasa')
-                    |
-                    .col-sm-3
-                      input#other_details(type='text', name='samasa[6][other_details]', placeholder='Other details')
-                    |
-                  .form-group.row
-                    .col-sm-3
-                      input#vigraha_vakya(type='text', name='samasa[7][vigraha_vakya]', placeholder='Vigraha Vakya')
-                    |
-                    .col-sm-3
-                      input#samasa_name(type='text', name='samasa[7][samasa_name]', placeholder='Name of the Samasa')
-                    |
-                    .col-sm-3
-                      input#other_details(type='text', name='samasa[7][other_details]', placeholder='Other details')
-                    |
-                  .form-group.row
-                    .col-sm-3
-                      input#vigraha_vakya(type='text', name='samasa[8][vigraha_vakya]', placeholder='Vigraha Vakya')
-                    |
-                    .col-sm-3
-                      input#samasa_name(type='text', name='samasa[8][samasa_name]', placeholder='Name of the Samasa')
-                    |
-                    .col-sm-3
-                      input#other_details(type='text', name='samasa[8][other_details]', placeholder='Other details')
-                    |
-                  .form-group.row
-                    .col-sm-3
-                      input#vigraha_vakya(type='text', name='samasa[9][vigraha_vakya]', placeholder='Vigraha Vakya')
-                    |
-                    .col-sm-3
-                      input#samasa_name(type='text', name='samasa[9][samasa_name]', placeholder='Name of the Samasa')
-                    |
-                    .col-sm-3
-                      input#other_details(type='text', name='samasa[9][other_details]', placeholder='Other details')
             |
             hr
             .form-group.row
               .col-sm-4
-                label(for='chandas_vritta') 7. Chandas and Vritta
+                label(for='chandas_vritta') 9. Chandas and Vritta
               |     
               .col-sm-8
                 input#sloka_num.form-control(type='text', name='chandas_vritta', placeholder='Devanagari')
@@ -4988,7 +6043,7 @@ block content
             hr
             .form-group.row
               .col-sm-4
-                label(for='alankara') 8. Alankara
+                label(for='alankara') 10. Alankara
               |     
               .col-sm-8
                 input#sloka_num.form-control(type='text', name='alankara', placeholder='Devanagari')
@@ -4996,15 +6051,7 @@ block content
             hr
             .form-group.row
               .col-sm-4
-                label(for='anvaya') 9. Anvaya
-              |     
-              .col-sm-8
-                textarea#anvaya.form-control(name='anvaya', placeholder='Devanagari')
-            |
-            hr
-            .form-group.row
-              .col-sm-4
-                label(for='anvaya') 10. Other information
+                label(for='anvaya') 11. Other information
               |     
               .col-sm-8
                 textarea#other_information.form-control(name='other_information', placeholder='Devanagari or English' rows='4')
@@ -5012,7 +6059,7 @@ block content
             hr
             .form-group.row
               .col-sm-4
-                label(for='anvaya') 11. Works for reference
+                label(for='anvaya') 12. Works for reference
               |     
               .col-sm-8
                 textarea#anvaya.form-control(name='works_ref', placeholder='Devanagari' rows='4')

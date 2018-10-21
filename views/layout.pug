@@ -113,3 +113,39 @@ html
         {
              document.getElementById(textBoxID).disabled = !bEnable
         }
+      
+      function CheckVV(id, val){
+         let element=document.getElementById(id);
+         if(val=='others')
+           element.style.display='block';
+         else  
+           element.style.display='none';
+        }
+      
+      function displayInput(selectid, divid) {
+        console.log('fn');
+      /*
+        let select = document.getElementById(selectid);
+        let divv = document.getElementById(divid);
+        let value = select.value;
+        if (value === 'Taddhita') {
+            // console.log(value);
+            divv.style.display = 'block'; 
+            return;
+            } 
+        if (value === 'Krudanta') {
+            // console.log(value);
+            divv.style.display = 'block'; 
+            return;
+            } 
+        if (value === 'Ekashesha') {
+            // console.log(value);
+            divv.style.display = 'block'; 
+            return;
+            } 
+        if (value === 'Samasa') {
+            // console.log(value);
+            divv.style.display = 'block'; 
+            return;
+            } */
+           }
