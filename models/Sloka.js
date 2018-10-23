@@ -26,9 +26,14 @@ const slokaSchema = new mongoose.Schema({
       atmane_or_parasmai: String,
       set_vet_anit: String,
       specific_type: String,
+      root: String,
+      conjugation: String,
       word_type: {
         wordtype: String,
-        details: String
+        details: String,
+        stem: String,
+        sutra: String,
+        meaning: String
       },
       word_meaning: {
         sanskrit: String,
