@@ -122,15 +122,23 @@ html
            element.style.display='none';
         }
       
-      function displayInput(selectid) {
+     function displayInput(selectid) {
         let select = document.getElementById(selectid);
         let eka = document.getElementsByClassName('eka');
         let tadkrud = document.getElementsByClassName('tadkrud');
+        let samasa = document.getElementsByClassName('samasa');
+        let other = document.getElementsByClassName('other_type');
         let value = select.value;
         if (value === 'Taddhita') {
             // console.log(value);
             for (i = 0; i < eka.length; i++) {
                 eka[i].style.display = 'none';
+            }
+            for (i = 0; i < samasa.length; i++) {
+                samasa[i].style.display = 'none';
+            }
+            for (i = 0; i < other.length; i++) {
+                other[i].style.display = 'none';
             }
             for (i = 0; i < tadkrud.length; i++) {
                 tadkrud[i].style.display = 'block';
@@ -141,6 +149,12 @@ html
             // console.log(value);
             for (i = 0; i < eka.length; i++) {
                 eka[i].style.display = 'none';
+            }
+            for (i = 0; i < samasa.length; i++) {
+                samasa[i].style.display = 'none';
+            }
+            for (i = 0; i < other.length; i++) {
+                other[i].style.display = 'none';
             }
             for (i = 0; i < tadkrud.length; i++) {
                 tadkrud[i].style.display = 'block';
@@ -155,6 +169,12 @@ html
             for (i = 0; i < tadkrud.length; i++) {
                 tadkrud[i].style.display = 'none';
             } 
+            for (i = 0; i < other.length; i++) {
+                other[i].style.display = 'none';
+            }
+            for (i = 0; i < samasa.length; i++) {
+                samasa[i].style.display = 'none';
+            }
             return;
             } 
         if (value === 'Samasa') {
@@ -165,6 +185,28 @@ html
             for (i = 0; i < tadkrud.length; i++) {
                 tadkrud[i].style.display = 'none';
             } 
+            for (i = 0; i < samasa.length; i++) {
+                samasa[i].style.display = 'block';
+            }
+            for (i = 0; i < other.length; i++) {
+                other[i].style.display = 'none';
+            }
+            return;
+            }
+        if (value === 'Othertype') {
+            // console.log(value);
+            for (i = 0; i < eka.length; i++) {
+                eka[i].style.display = 'none';
+            }
+            for (i = 0; i < tadkrud.length; i++) {
+                tadkrud[i].style.display = 'none';
+            } 
+            for (i = 0; i < samasa.length; i++) {
+                samasa[i].style.display = 'none';
+            }
+            for (i = 0; i < other.length; i++) {
+                other[i].style.display = 'block';
+            }
             return;
             } 
            }

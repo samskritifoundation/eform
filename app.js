@@ -66,8 +66,8 @@ app.use(sass({
 }));
 app.use(express.static(__dirname + 'public'));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit: 1000000}));
 app.use(expressValidator());
 app.use(session({
   resave: true,
@@ -132,7 +132,11 @@ app.post('/account/delete', passportConfig.isAuthenticated, userController.postD
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 app.get('/form',passportConfig.isAuthenticated, formController.getForm);
 app.post('/form',passportConfig.isAuthenticated, formController.postForm);
-app.get('/slokas',passportConfig.isAuthenticated, slokaController.getSloka);
+app.get('/slokas',passportConfig.isAuthenticated, slokaController.getSlokas);
+app.get('/sloka/:sl',passportConfig.isAuthenticated, slokaController.getSloka);
+app.get('/editsloka/:sl',passportConfig.isAuthenticated, slokaController.editSlokaform);
+app.post('/editsloka/:sl',passportConfig.isAuthenticated, slokaController.editSloka);
+app.post('/delsloka/:sl',passportConfig.isAuthenticated, slokaController.delSloka);
 /**
  * API examples routes.
  */

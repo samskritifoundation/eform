@@ -1,0 +1,332 @@
+extends layout
+
+block content
+  h1 Sankshepa Ramayana 
+  nav.nav
+    span #{sloka.sloka_or_gadya}
+    form.form-inline(onsubmit="return confirm('Do you really want to delete?');" action='/delsloka/'+sloka._id, method='POST')
+      a.btn.btn-info(href='/editsloka/'+sloka._id, role='button') Edit »
+      input(type='hidden', name='_csrf', value=_csrf)
+      button.btn.btn-warning Delete »
+  hr
+  table.table.table-striped.table-responsive
+    thead
+      tr
+        th.col-sm-4  Field
+        |
+        th.col-sm-8  Entry
+    |
+    tbody
+      tr
+        td 1. Sloka number
+        |
+        td 
+          input(value=sloka.sl_num readonly)
+      |
+      tr
+        td 2. Text
+        | 
+        if sloka.sloka_or_gadya == 'Sloka'
+          td 
+            textarea.form-control(rows = 5, readonly) #{sloka.sloka_text}
+        else
+          td 
+            textarea.form-control(rows=5, readonly) #{sloka.gadya_text}
+      tr
+        td 3. Words
+        |
+        td
+          textarea.form-control(readonly) #{sloka.words}
+      tr
+        td 4. Padavibhaga
+        |
+        td
+          button.btn.btn-primary(type="button" data-toggle="modal" data-target="#padavibhagamodal") View Padavibhaga
+      |
+      tr
+        td 5. Anvaya
+        |
+        td
+          textarea.form-control(readonly) #{sloka.anvaya}
+      tr
+        td 6 a. Literal Meaning of the verse (Sanskrit)
+        |
+        td
+          textarea.form-control(readonly) #{sloka.literal_meaning.sanskrit}
+      tr
+        td 6 b. Literal Meaning of the verse (Hindi)
+        |
+        td
+          textarea.form-control(readonly) #{sloka.literal_meaning.hindi}
+      tr
+        td 6 c. Literal Meaning of the verse (Kannada)
+        |
+        td
+          textarea.form-control(readonly) #{sloka.literal_meaning.kannada}
+      tr
+        td 6 d. Literal Meaning of the verse (English)
+        |
+        td
+          textarea.form-control(readonly) #{sloka.literal_meaning.english}
+      tr
+        td 7 a. Bhavartha (English)
+        |
+        td
+          textarea.form-control(readonly) #{sloka.bhavartha.english}
+      tr
+        td 7 b. Bhavartha (Kannada)
+        |
+        td
+          textarea.form-control(readonly) #{sloka.bhavartha.kannada}
+      tr
+        td 7 c. Bhavartha (Hindi)
+        |
+        td
+          textarea.form-control(readonly) #{sloka.bhavartha.hindi}
+      |
+      tr
+        td 8. Sandhis
+        |
+        td
+          for sandhi,id in sloka.sandhi
+            h4 Sandhi #{id + 1}
+            .form-group.row
+                  .col-sm-3
+                    input#purvapada(type='text', name='sandhi[#{id}][purvapada]', value=sandhi.purvapada, readonly)
+                  |
+                  .col-sm-3
+                    input#uttarapada(type='text', name='sandhi[#{id}][uttarapada]', value=sandhi.uttarapada, readonly)
+                  |
+                  .col-sm-3
+                    input#sandhi_name(type='text', name='sandhi[#{id}][sandhi_name]', value=sandhi.sandhi_name, readonly)
+                  |
+                  .col-sm-3
+                    input#other_details(type='text', name='sandhi[#{id}][other_details]', value=sandhi.other_details, readonly)
+      |
+      tr
+        td 9. Samasas
+        |
+        td
+          for samasa,id in sloka.samasa
+            h4 Samasa #{id + 1}
+            .form-group.row
+                      .col-sm-3
+                        input#vigraha_vakya(type='text', name='samasa[#{id}][vigraha_vakya]', value=samasa.vigraha_vakya, placeholder='Vigraha Vakya', readonly)
+                      |
+                      .col-sm-3
+                        input#samasa_name(type='text', name='samasa[#{id}][samasa_name]', value=samasa.samasa_name, placeholder='Name of the Samasa', readonly)
+                      |
+                      .col-sm-3
+                        input#other_details(type='text', name='samasa[#{id}][other_details]', value=samasa.other_details, placeholder='Other details', readonly)
+      |
+      tr
+        td 10. Chandas and Vritta
+        |
+        td
+          input.form-control(value = sloka.chandas_vritta readonly)
+      tr
+        td 11. Alankara
+        |
+        td
+          input.form-control(value = sloka.alankara readonly)
+      tr
+        td 12. Other Information
+        |
+        td
+          textarea.form-control(readonly) #{sloka.other_information}
+      tr
+        td 13. Works for reference
+        |
+        td
+          textarea.form-control(readonly) #{sloka.works_ref}
+  .modal.fade#padavibhagamodal(tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+          .modal-dialog(role="document")
+            .modal-content
+              .modal-header
+                h5.modal-title Padavibhaga Details
+                button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                  span(aria-hidden="true") &times
+              .modal-body
+                  ol
+                    each val,index in sloka.padavibhaga
+                      if val.pada
+                        li
+                          p= val.pada
+                          table.table.table-responsive
+                            tr
+                              td Word Type
+                              |
+                              td= val.sub_dhatu_avyaya
+                            |
+                            if val.sub_dhatu_avyaya == 'Subanta,'
+                              tr
+                                td Anta
+                                |
+                                td= val.anta
+                              |
+                              tr
+                                td Linga
+                                |
+                                td= val.linga
+                              |
+                              tr
+                                td Vibhakti
+                                |
+                                td= val.vibhakti
+                              |
+                              tr
+                                td Vachana
+                                |
+                                td= val.sub_vachana
+                              |
+                              tr
+                                td Pratipadikam / Original Stem
+                                |
+                                td= val.pratipadikam
+                              |
+                              tr
+                                td Vyutpatti / Nishpatti
+                                |
+                                td
+                                  p= val.vyutpatti_nishpatti
+                                  p= val.vyutpatti_details
+                                  p= val.nishpatti_details
+                            |
+                            if val.sub_dhatu_avyaya == 'Tiganta,'
+                              tr
+                                td Lakara
+                                |
+                                td= val.lakara
+                              |
+                              tr
+                                td Purusha
+                                |
+                                td= val.purusha
+                              |
+                              tr
+                                td Vachana
+                                |
+                                td= val.dhatu_vachana
+                              |
+                              tr
+                                td Padi
+                                |
+                                td= val.atmane_or_parasmai
+                              |
+                              tr
+                                td Set/Vet/Anit
+                                |
+                                td= val.set_vet_anit
+                              |
+                              tr
+                                td Specific Type
+                                |
+                                td= val.specific_type
+                              |
+                              tr
+                                td Root
+                                |
+                                td= val.root
+                              |
+                              tr
+                                td Conjugation / Gana
+                                |
+                                td= val.conjugation
+                            |
+                            tr
+                              td Word Type
+                              |
+                              td= val.word_type.wordtype
+                            |
+                            if val.word_type.wordtype == 'Taddhita,'
+                                tr
+                                  td Stem / Pratyaya
+                                  |
+                                  td= val.word_type.stem
+                                |
+                                tr 
+                                  td Panini Sutra
+                                  |
+                                  td= val.word_type.sutra
+                                |
+                                tr
+                                  td Meaning of Pratyaya
+                                  |
+                                  td= val.word_type.meaning
+                            |
+                            if val.word_type.wordtype == 'Krudanta,'
+                                tr
+                                  td Stem / Pratyaya
+                                  |
+                                  td= val.word_type.stem
+                                |
+                                tr 
+                                  td Panini Sutra
+                                  |
+                                  td= val.word_type.sutra
+                                |
+                                tr
+                                  td Meaning of Pratyaya
+                                  |
+                                  td= val.word_type.meaning
+                            |
+                            if val.word_type.wordtype == 'Ekashesha,'
+                                tr 
+                                  td Details
+                                  |
+                                  td= val.word_type.details
+                            if val.word_type.wordtype == 'Samasa'
+                                each sam in val.word_type.samasa
+                                  tr
+                                    td Vigraha Vakya
+                                    |
+                                    td= sam.vigraha_vakya
+                                  |
+                                  tr 
+                                    td Name of the Samasa
+                                    |
+                                    td= sam.samasa_name
+                                  |
+                                  tr
+                                    td Other details
+                                    |
+                                    td= sam.other_details
+                            if val.word_type.wordtype == 'Others,'
+                                tr 
+                                  td Details
+                                  |
+                                  td= val.word_type.other
+                            | 
+                            tr
+                              td Visheshana Visheshya Bhava
+                              |
+                              td= val.visheshana_visheshya_bhava
+                            |
+                            tr
+                              td Synonyms
+                              |
+                              td
+                                each syn in val.synonyms
+                                  p= syn
+                            |
+                            tr
+                              td Word meaning (Sanskrit)
+                              |
+                              td= val.word_meaning.sanskrit
+                            |
+                            tr
+                              td Word meaning (English)
+                              |
+                              td= val.word_meaning.english
+                            |
+                            tr
+                              td Word meaning (Kannada)
+                              |
+                              td= val.word_meaning.kannada
+                            |
+                            tr
+                              td Word meaning (Hindi)
+                              |
+                              td= val.word_meaning.hindi
+          .modal-footer
+            button(type="button" class="btn btn-secondary" data-dismiss="modal") Close

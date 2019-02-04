@@ -7,6 +7,7 @@ const slokaSchema = new mongoose.Schema({
   sloka_or_gadya: String,
   sloka_text: String,
   gadya_text: String,
+  words: String,
   padavibhaga: [
     {
       sl_num: Number,
@@ -33,7 +34,15 @@ const slokaSchema = new mongoose.Schema({
         details: String,
         stem: String,
         sutra: String,
-        meaning: String
+        meaning: String,
+        samasa:[
+          {
+            vigraha_vakya: String,
+            samasa_name: String,
+            other_details: String
+          }
+        ],
+        other: String
       },
       word_meaning: {
         sanskrit: String,
@@ -61,13 +70,6 @@ const slokaSchema = new mongoose.Schema({
       purvapada: String,
       uttarapada: String,
       sandhi_name: String,
-      other_details: String
-    }
-    ],
-  samasa:[
-    {
-      vigraha_vakya: String,
-      samasa_name: String,
       other_details: String
     }
     ],

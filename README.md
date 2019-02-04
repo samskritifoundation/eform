@@ -1,4 +1,4 @@
-Content filling form for Ramayana Sangraha 
+Content filling form for Ramayana sangraha
 =======================
 
 ## Features
