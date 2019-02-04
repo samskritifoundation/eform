@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  h1 Ramayana Sangraha
+  p.lead Slokas
+  hr
+  table.table.table-striped.table-responsive
+    thead
+      tr
+        th Sl. No.
+        |
+        th Sloka text
+        |
+        th 
+    |
+    tbody
+      for sloka in slokas
+        tr
+          td #{sloka.sl_num}
+          | 
+          td
+            pre #{sloka.sloka_text}
+          |
+          td 
+            a.btn.btn-success(href='/sloka/'+sloka._id, role='button') View » 
+            |
+            a.btn.btn-info(href='/editsloka/'+sloka._id, role='button') Edit »
+            |
+            form.form-horizontal(onsubmit="return confirm('Do you really want to delete?');" action='/delsloka/'+sloka._id, method='POST')
+              input(type='hidden', name='_csrf', value=_csrf)
+              button.btn.btn-warning Delete »
+          
+          
+          
+  

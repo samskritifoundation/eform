@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1 Ramayana Sangraha
+  p.lead Content creation form
+  hr
+  .row
+    .col-sm-6
+      if !user
+        h2 Login
+        p Login to create content.
+        p
+          a.btn.btn-default(href='/login', role='button') Login »
+      else
+        h2 View Slokas 
+        p View slokas that have been added to the database
+        p
+          a.btn.btn-default(href='/slokas', role='button') View »
+    .col-sm-6
+      if !user
+        h2 Register
+        p If you don't have an account yet, register. 
+        p
+          a.btn.btn-default(href='/signup', role='button') Register »
+      else
+        h2 Add slokas(s)
+        p Add details of slokas to the database
+        p
+          a.btn.btn-default(href='/form', role='button') Add »
